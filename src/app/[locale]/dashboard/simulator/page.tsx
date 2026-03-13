@@ -432,8 +432,8 @@ export default function SimulatorPage() {
                         color: "#F0ECE3",
                         fontSize: 13,
                       }}
-                      formatter={(value: number, name: string) => [
-                        formatCurrency(value, country),
+                      formatter={(value, name) => [
+                        formatCurrency(Number(value ?? 0), country),
                         name === "invested"
                           ? isEs
                             ? "Invertido"

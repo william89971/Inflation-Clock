@@ -36,7 +36,7 @@ export function ShareButtons({
 
   const utmUrl = `${baseUrl}?utm_source=share&utm_medium=social&utm_campaign=results`;
 
-  const shareText = t("share.tweetText", { amount: formattedLoss });
+  const shareText = t("share.tweetText");
 
   function handleTwitter() {
     trackEvent("share_click", { platform: "twitter", content_type: "results" });
