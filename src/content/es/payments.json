@@ -1,0 +1,35 @@
+{
+  "slug": "payments",
+  "title": "Pagos con Bitcoin",
+  "hook": "Enviar dinero debería ser tan fácil como enviar un mensaje. Con Lightning, finalmente lo es.",
+  "icon": "⚡",
+  "path": 4,
+  "pathName": "Cómo Funciona Bitcoin",
+  "readTime": 9,
+  "sections": [
+    {
+      "id": "vs-visa",
+      "title": "Bitcoin vs Visa",
+      "content": "Cuando pasás tu tarjeta Visa, la transacción se siente instantánea — pero no lo es. **Tu pago en realidad no se liquida por 2-3 días hábiles.** El comerciante no recibe el dinero de inmediato, Visa se lleva un 2-3% de comisión, y todo el sistema depende de la confianza entre media docena de intermediarios.\n\nBitcoin en la Lightning Network se liquida en **menos de un segundo, con finalidad.** Eso significa que el dinero realmente se mueve — no es una promesa de pagar después. El comerciante recibe el pago al instante, con comisiones que típicamente son menos de un centavo. Sin intermediarios, sin contracargos, sin período de espera de 3 días.\n\n**Visa no funciona para todos.** Si sos uno de los 1,400 millones de adultos sin cuenta bancaria, no podés obtener una tarjeta Visa. Si vivís en un país sancionado, Visa no procesará tus pagos. Si tu transacción es marcada por un algoritmo, tu tarjeta es declinada. A Bitcoin no le importa quién sos, dónde vivís, o qué hora es — si tenés un teléfono, podés pagar.\n\nAcá hay algo que la mayoría no sabe: **Visa puede procesar alrededor de 65,000 transacciones por segundo, pero típicamente maneja unas 1,700.** La capacidad teórica de la Lightning Network es virtualmente ilimitada porque funciona a través de canales de pago en vez de un cuello de botella único. Y a diferencia de Visa, funciona sobre un protocolo abierto sobre el que cualquiera puede construir — sin acuerdos de asociación, sin proceso de aplicación, sin permiso requerido.",
+      "eli5Available": true
+    },
+    {
+      "id": "lightning",
+      "title": "La Lightning Network",
+      "content": "**Pensá en la Lightning Network como abrir una cuenta en un bar.** Cuando abrís una cuenta, le das tu tarjeta al barman una vez, pedís tragos toda la noche, y cerrás al final. No pasás tu tarjeta por cada cerveza — eso sería lento y molesto. Lightning funciona de la misma manera.\n\nDos personas (o una persona y un negocio) abren un \"canal de pago\" entre ellos, que es como abrir una cuenta. **Pueden entonces enviar pagos de ida y vuelta instantáneamente, ilimitadas veces, por comisiones casi nulas.** Cuando terminan, el balance final se liquida en la blockchain principal de Bitcoin — igual que cerrar tu cuenta al final de la noche.\n\nLa magia es que **no necesitás un canal directo con cada persona a la que querés pagarle.** Si tenés un canal con Alicia, y Alicia tiene uno con Roberto, tu pago puede saltar a través de Alicia para llegar a Roberto — todo en menos de un segundo, todo sin necesidad de confianza. La red enruta los pagos automáticamente, encontrando el camino más rápido y barato.\n\n**En la práctica, Lightning es ridículamente simple.** Abrís una billetera Lightning en tu teléfono, cargás algo de Bitcoin, y escaneás un código QR para pagar. El pago llega en menos de un segundo. Sin números de cuenta, sin números de ruta, sin nombre de banco, sin esperar. Si alguna vez usaste Venmo, la experiencia es similar — excepto que Lightning funciona entre países, no tiene límites diarios y no requiere cuenta bancaria.",
+      "eli5Available": true
+    },
+    {
+      "id": "remittances",
+      "title": "Remesas",
+      "content": "**Cada año, los trabajadores migrantes envían más de $700 mil millones de vuelta a sus familias en sus países de origen.** Estas transferencias se llaman remesas, y para millones de familias en Latinoamérica, África y Asia, este dinero es su principal fuente de ingresos. Paga la comida, la escuela, las medicinas y el alquiler.\n\n¿El problema? **Las empresas tradicionales de remesas como Western Union y MoneyGram cobran 6-10% en comisiones.** Eso significa que por cada $200 que una madre en Los Ángeles envía a su familia en El Salvador, $12-$20 desaparecen en comisiones. En todas las remesas globalmente, eso son aproximadamente $45 mil millones al año tomados de las familias más pobres del mundo.\n\n**Bitcoin a través de la Lightning Network puede reducir esas comisiones a casi cero.** Un trabajador en EE.UU. puede enviar $200 a El Salvador en segundos, con comisiones de unos pocos centavos en vez de $20. Apps como Strike hacen esto tan fácil como enviar un mensaje de texto. El receptor puede quedarse con los Bitcoin o convertirlos instantáneamente a moneda local.\n\n**Solo El Salvador recibe alrededor de $7 mil millones en remesas anualmente** — aproximadamente el 24% del PIB del país. Si todas esas transferencias se movieran a la infraestructura de Bitcoin, las familias ahorrarían cientos de millones de dólares al año. Eso no es teórico — ya está pasando. Strike reportó que las remesas a El Salvador a través de su app han crecido consistentemente desde su lanzamiento, ahorrando dinero real a las familias en cada transferencia.",
+      "eli5Available": true
+    },
+    {
+      "id": "get-lightning",
+      "title": "Conseguí Tu Dirección Lightning",
+      "content": "Una dirección Lightning se ve igual que un correo electrónico — algo como **tunombre@walletofsatoshi.com** — y funciona de la misma manera. Cualquiera puede enviarte Bitcoin solo con conocer tu dirección. Sin cadenas complicadas de números y letras, sin necesidad de códigos QR.\n\n**Configurar tu dirección Lightning toma alrededor de 2 minutos.** Descargá una billetera Lightning como Wallet of Satoshi (disponible mundialmente), Phoenix (excelente para privacidad), o Strike (EE.UU., El Salvador). Creá una cuenta, y automáticamente obtendrás una dirección Lightning que podés compartir con cualquiera.\n\nUna vez que tenés tu dirección, **ponela en todas partes.** Agregala a tu bio de Twitter/X, tu firma de correo electrónico, tu sitio web, tu tarjeta de presentación. Cualquiera que la vea puede enviarte sats (la unidad más pequeña de Bitcoin) al instante. Algunas personas reciben propinas por buenos tweets, donaciones por trabajo de código abierto, o pagos por trabajos freelance — todo a través de su dirección Lightning.\n\nAcá va una comparación rápida de billeteras populares: **Wallet of Satoshi** es la más simple — descargá, abrí, listo. **Phoenix** te da más control y mejor privacidad pero requiere una pequeña comisión de apertura de canal. **Strike** es genial si querés conversión fácil entre Bitcoin y dólares. **Muun** ofrece un buen balance entre simplicidad y auto-custodia. Probá una, enviáte un pago pequeño, y experimentá el futuro del dinero de primera mano.",
+      "eli5Available": true
+    }
+  ]
+}

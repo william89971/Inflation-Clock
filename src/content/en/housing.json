@@ -1,0 +1,29 @@
+{
+  "slug": "housing",
+  "title": "Why You Can't Afford a House",
+  "hook": "Your parents aren't smarter than you. They just bought houses before the money printer went brrr.",
+  "icon": "🏗️",
+  "path": 2,
+  "pathName": "Bitcoin & Society",
+  "readTime": 7,
+  "sections": [
+    {
+      "id": "money-printing-housing",
+      "title": "How Money Printing Broke Housing",
+      "content": "In 1971, the average American home cost about **$25,000** — roughly 3 times the median household income. Today, the average home costs over **$400,000** — more than 7 times the median household income. What happened? Did houses suddenly get twice as good? Did land become twice as scarce? No. **The money got broken.**\n\nWhen Nixon took the dollar off the gold standard in 1971, there were about **$600 billion** in the M2 money supply. Today, M2 is over **$20 trillion.** That's a 30x increase in the amount of dollars floating around the economy. And where did all those new dollars go first? Straight into assets — especially real estate.\n\nHere's the mechanism: the Federal Reserve prints money and pushes down interest rates. Low interest rates mean people can borrow more. More borrowing means more demand for houses. More demand means higher prices. **The money printer doesn't build houses — it just makes them more expensive.**\n\nBut it gets worse. Because housing prices keep rising faster than wages, people need bigger mortgages. Bigger mortgages mean more interest payments to banks. Banks use that money to lobby for policies that keep the cycle going. **It's a self-reinforcing system that transfers wealth from young buyers to existing owners and financial institutions.**\n\nYour parents didn't buy a house because they were more disciplined or harder-working than you. They bought a house before the money supply exploded. If you adjusted for money printing, homes haven't actually appreciated that much. **The houses didn't get more valuable — your dollars got less valuable.**",
+      "eli5Available": true
+    },
+    {
+      "id": "btc-affordable",
+      "title": "How Bitcoin Could Make Housing Affordable",
+      "content": "Under a sound money standard — money that can't be printed at will — something remarkable happens: **prices tend to fall over time.** Technology improves, productivity increases, and the same amount of money buys more stuff. This was actually the norm throughout much of the 19th century under the gold standard.\n\nImagine a world where money couldn't be printed. Builders would still build houses. Demand for housing would still exist. But the artificial demand created by cheap credit and money printing would disappear. **Housing prices would reflect actual supply and demand, not the whims of central bank policy.**\n\nUnder sound money, you wouldn't need a 30-year mortgage to buy a home. Think about that. The 30-year mortgage only exists because homes are so expensive relative to incomes — and homes are so expensive because money printing has inflated their prices for decades. **In a sound money world, a 10 or 15-year mortgage — or even buying outright — would be realistic for ordinary families.**\n\nBitcoin introduces this possibility. With a fixed supply of 21 million coins, Bitcoin can't be inflated. If Bitcoin became widely adopted as a store of value, the incentive to park wealth in real estate as an inflation hedge would diminish. People wouldn't need to buy houses they don't need just to protect their savings from being devalued.\n\nThis won't happen overnight, and it's not guaranteed to play out exactly this way. But the core logic is sound: **when money is broken, everything priced in that money becomes distorted. Fix the money, and prices start to make sense again.** Housing should be a place to live, not a speculation vehicle driven by monetary manipulation.",
+      "eli5Available": true
+    },
+    {
+      "id": "priced-in-btc",
+      "title": "Priced In Bitcoin",
+      "content": "Here's an exercise that will change how you think about housing. Take the median U.S. home price and divide it by the price of Bitcoin at various points in time. What you'll see is stunning: **priced in Bitcoin, housing has gotten dramatically cheaper.**\n\nIn 2015, the median U.S. home cost roughly **1,000 BTC.** By 2020, that same home cost about **35 BTC.** By 2024, it cost around **5-8 BTC.** The trend is unmistakable — when you measure housing in sound money instead of depreciating dollars, homes are getting more affordable, not less.\n\nThis isn't just a fun math trick. It reveals something profound about what's really happening. **Houses aren't getting more expensive — the dollar is getting weaker.** When you measure in a currency with a fixed supply, the real cost of housing reflects actual construction costs, land value, and demand — not monetary inflation.\n\nThink about what this means for your financial strategy. If you save in dollars, you're in a losing race against housing prices that are inflated by the very money you're trying to save. But if you save in Bitcoin, **you're saving in an asset that appreciates faster than housing prices rise.** The longer you save, the more housing you can afford.\n\nNow, this comes with important caveats. Bitcoin is volatile in the short term, and past performance doesn't guarantee future results. But the structural trend is clear: an asset with a fixed supply tends to appreciate against assets inflated by money printing. **If Bitcoin continues its trajectory, the dream of homeownership becomes more achievable for savers, not less.** That's the opposite of what's happening in the fiat world.",
+      "eli5Available": true
+    }
+  ]
+}

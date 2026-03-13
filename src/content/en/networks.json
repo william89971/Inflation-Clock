@@ -1,0 +1,29 @@
+{
+  "slug": "networks",
+  "title": "The Bitcoin Network",
+  "hook": "Thousands of computers around the world keeping your money safe — no boss, no headquarters, no off switch.",
+  "icon": "🌐",
+  "path": 4,
+  "pathName": "How Bitcoin Works",
+  "readTime": 8,
+  "sections": [
+    {
+      "id": "live-network",
+      "title": "See The Bitcoin Network Live",
+      "content": "Want to see Bitcoin working in real-time? **Go to mempool.space** and watch transactions flow across the network right before your eyes. It's like watching air traffic control, but for money. Every dot, every block, every transaction — all happening live, all visible to anyone.\n\nThe site shows you the **mempool** — a waiting room where transactions sit before being confirmed. You can see how many transactions are waiting, how much in fees people are paying, and when the next block is expected to arrive. It's completely transparent, unlike your bank, which tells you nothing about what happens between \"pending\" and \"completed.\"\n\n**Every block that gets mined is like a page being added to an accounting ledger that can never be erased.** You can click on any block and see every single transaction in it — how much was sent, which addresses were involved, and how much the sender paid in fees. Try asking your bank to show you what every other customer did today. They'd laugh at you.\n\nSpend a few minutes watching mempool.space and something clicks: **this is real.** It's not a concept, not a theory, not a promise — it's a living, breathing network processing transactions 24/7/365, visible to everyone. No other monetary system in history has been this transparent.",
+      "eli5Available": true
+    },
+    {
+      "id": "vs-banks",
+      "title": "Bitcoin vs Banks",
+      "content": "Your bank has a CEO, a board of directors, a headquarters building, business hours, holidays, and a customer service line that puts you on hold for 45 minutes. **Bitcoin has none of these things.** It runs on thousands of computers spread across every continent, with no single point of failure and no one in charge.\n\nBanks can freeze your account, reverse your transactions, deny your loan, or close your account entirely — all without your permission. **They've done it to millions of people for reasons ranging from political views to living in the wrong country.** Bitcoin can't do any of that because there's nobody with the power to do it.\n\n**Banks operate roughly 250 days a year during business hours.** That means for more than 100 days every year — weekends, holidays, after hours — your money is essentially frozen. Need to send money at 11 PM on a Sunday? Too bad. Bitcoin processes transactions every 10 minutes, every hour, every day, every year, with zero downtime since 2013.\n\nWhen a bank fails — and they fail regularly — your money is at risk. The FDIC insures up to $250,000 in the US, but that's a promise from the government, not a guarantee. And in many countries, there's no deposit insurance at all. **Bitcoin held in your own wallet can never be lost to a bank failure** because there's no bank involved. You are the bank.",
+      "eli5Available": true
+    },
+    {
+      "id": "stays-secure",
+      "title": "How The Network Stays Secure",
+      "content": "Bitcoin's security doesn't come from a company, a government, or a team of cybersecurity experts. **It comes from math, energy, and economic incentives.** Here's how it works in plain language.\n\nImagine thousands of people around the world, each with a powerful computer, all racing to solve a math puzzle. The first one to solve it gets to add the next page (block) of transactions to the ledger and earns a reward in Bitcoin. **This is mining.** The puzzle is hard to solve but easy for everyone else to verify — like a Sudoku that takes hours to complete but seconds to check.\n\nWhy does this make Bitcoin secure? Because **to cheat the system, you'd need to outrace all the other miners combined.** You'd need more than 50% of all the computing power on the network, which currently would require billions of dollars in equipment and electricity. It's like trying to outrun every car on every highway in the world simultaneously.\n\n**The beauty is that it's more profitable to play by the rules than to cheat.** Miners who successfully add blocks earn Bitcoin rewards. If they tried to cheat (like spending the same Bitcoin twice), the other computers would reject their block, and the miner would lose the reward plus all the electricity they spent. Honesty pays. Cheating doesn't. That's the genius of Bitcoin's design — it turned security into an economic problem and solved it with incentives.",
+      "eli5Available": true
+    }
+  ]
+}

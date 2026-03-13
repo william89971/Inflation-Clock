@@ -1,0 +1,29 @@
+{
+  "slug": "networks",
+  "title": "La Red Bitcoin",
+  "hook": "Miles de computadoras alrededor del mundo protegiendo tu dinero — sin jefe, sin sede central, sin botón de apagado.",
+  "icon": "🌐",
+  "path": 4,
+  "pathName": "Cómo Funciona Bitcoin",
+  "readTime": 8,
+  "sections": [
+    {
+      "id": "live-network",
+      "title": "Mirá la Red Bitcoin en Vivo",
+      "content": "¿Querés ver Bitcoin funcionando en tiempo real? **Andá a mempool.space** y observá las transacciones fluir por la red frente a tus ojos. Es como ver el control de tráfico aéreo, pero para dinero. Cada punto, cada bloque, cada transacción — todo sucediendo en vivo, todo visible para cualquiera.\n\nEl sitio te muestra el **mempool** — una sala de espera donde las transacciones esperan antes de ser confirmadas. Podés ver cuántas transacciones están esperando, cuánto en comisiones está pagando la gente, y cuándo se espera que llegue el próximo bloque. Es completamente transparente, a diferencia de tu banco, que no te dice nada sobre lo que pasa entre \"pendiente\" y \"completado\".\n\n**Cada bloque que se mina es como una página que se agrega a un libro contable que nunca puede ser borrado.** Podés hacer clic en cualquier bloque y ver cada transacción dentro de él — cuánto se envió, qué direcciones estuvieron involucradas, y cuánto pagó el remitente en comisiones. Intentá pedirle a tu banco que te muestre lo que hicieron todos los demás clientes hoy. Se reirían en tu cara.\n\nPasá unos minutos viendo mempool.space y algo hace clic: **esto es real.** No es un concepto, no es una teoría, no es una promesa — es una red viva que procesa transacciones 24/7/365, visible para todos. Ningún otro sistema monetario en la historia ha sido así de transparente.",
+      "eli5Available": true
+    },
+    {
+      "id": "vs-banks",
+      "title": "Bitcoin vs Bancos",
+      "content": "Tu banco tiene un CEO, una junta directiva, un edificio central, horario de atención, días feriados, y una línea de servicio al cliente que te deja esperando 45 minutos. **Bitcoin no tiene nada de eso.** Funciona en miles de computadoras distribuidas en todos los continentes, sin un solo punto de falla y sin nadie a cargo.\n\nLos bancos pueden congelar tu cuenta, revertir tus transacciones, negar tu préstamo o cerrar tu cuenta por completo — todo sin tu permiso. **Se lo han hecho a millones de personas por razones que van desde opiniones políticas hasta vivir en el país equivocado.** Bitcoin no puede hacer nada de eso porque no hay nadie con el poder para hacerlo.\n\n**Los bancos operan aproximadamente 250 días al año durante horas laborales.** Eso significa que por más de 100 días cada año — fines de semana, feriados, fuera de horario — tu dinero está esencialmente congelado. ¿Necesitás enviar dinero a las 11 PM un domingo? Mala suerte. Bitcoin procesa transacciones cada 10 minutos, cada hora, cada día, cada año, con cero tiempo de inactividad desde 2013.\n\nCuando un banco quiebra — y quiebran regularmente — tu dinero está en riesgo. El FDIC asegura hasta $250,000 en EE.UU., pero eso es una promesa del gobierno, no una garantía. Y en muchos países, no existe seguro de depósitos. **Bitcoin guardado en tu propia billetera nunca puede perderse por la quiebra de un banco** porque no hay banco involucrado. Vos sos el banco.",
+      "eli5Available": true
+    },
+    {
+      "id": "stays-secure",
+      "title": "Cómo la Red Se Mantiene Segura",
+      "content": "La seguridad de Bitcoin no viene de una empresa, un gobierno ni un equipo de expertos en ciberseguridad. **Viene de las matemáticas, la energía y los incentivos económicos.** Así funciona en lenguaje sencillo.\n\nImaginá miles de personas alrededor del mundo, cada una con una computadora poderosa, todas compitiendo para resolver un rompecabezas matemático. El primero en resolverlo puede agregar la siguiente página (bloque) de transacciones al libro contable y gana una recompensa en Bitcoin. **Esto es la minería.** El rompecabezas es difícil de resolver pero fácil para todos los demás de verificar — como un Sudoku que toma horas completar pero segundos verificar.\n\n¿Por qué esto hace a Bitcoin seguro? Porque **para hacer trampa en el sistema, necesitarías superar a todos los demás mineros combinados.** Necesitarías más del 50% de todo el poder de cómputo en la red, lo que actualmente requeriría miles de millones de dólares en equipos y electricidad. Es como intentar ir más rápido que todos los autos en todas las carreteras del mundo simultáneamente.\n\n**La belleza es que es más rentable seguir las reglas que hacer trampa.** Los mineros que exitosamente agregan bloques ganan recompensas en Bitcoin. Si intentaran hacer trampa (como gastar el mismo Bitcoin dos veces), las otras computadoras rechazarían su bloque, y el minero perdería la recompensa más toda la electricidad que gastó. La honestidad paga. La trampa no. Esa es la genialidad del diseño de Bitcoin — convirtió la seguridad en un problema económico y lo resolvió con incentivos.",
+      "eli5Available": true
+    }
+  ]
+}

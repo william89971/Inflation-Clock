@@ -1,0 +1,35 @@
+{
+  "slug": "coding",
+  "title": "Build On Bitcoin",
+  "hook": "You don't need a computer science degree to build with Bitcoin. Start with curiosity and a browser.",
+  "icon": "💻",
+  "path": 4,
+  "pathName": "How Bitcoin Works",
+  "readTime": 8,
+  "sections": [
+    {
+      "id": "tutorial",
+      "title": "Interactive Bitcoin Tutorial",
+      "content": "The best way to understand Bitcoin is to **interact with it yourself.** Not just reading about it — actually creating addresses, signing transactions, and seeing how the pieces fit together. That's exactly what trybitcoin.satsie.dev offers.\n\nThis free, browser-based tutorial walks you through **the fundamentals of Bitcoin step by step.** You'll learn how keys work, how transactions are constructed, and how the blockchain stores data — all through hands-on exercises that run right in your browser. No downloads, no installations, no prior coding experience needed.\n\n**The tutorial uses real Bitcoin concepts but in a safe sandbox environment**, so you can experiment without risking real money. You'll generate your own keys, create your own transactions, and verify them yourself. It's one thing to read that Bitcoin uses public-key cryptography — it's another to actually create a key pair and sign a message with it.\n\nWhether you're a complete beginner or a developer who wants to understand Bitcoin at a deeper level, **this is the best place to start.** Bookmark trybitcoin.satsie.dev, set aside an hour, and you'll walk away with a fundamentally better understanding of how Bitcoin actually works under the hood.",
+      "eli5Available": true
+    },
+    {
+      "id": "saving-satoshi",
+      "title": "Saving Satoshi",
+      "content": "**Saving Satoshi (savingsatoshi.com) turns learning Bitcoin development into a game.** Instead of dry documentation and textbook exercises, you follow a narrative story while solving real coding challenges that teach you how Bitcoin works at the protocol level.\n\nThe platform is designed for people who can write some code but don't know anything about Bitcoin development. **Each chapter introduces a new concept** — hashing, digital signatures, script, transactions — through challenges that gradually increase in difficulty. You're not just memorizing theory; you're writing actual code that interacts with Bitcoin.\n\nWhat makes Saving Satoshi special is its **story-driven approach.** You're not just completing exercises — you're uncovering a mystery that keeps you engaged and motivated to learn more. It's the gamification of Bitcoin education, and it works incredibly well. Many developers who struggled with dry documentation found their breakthrough moment through this platform.\n\n**The project is completely open-source and free.** It was built by Bitcoin developers who believe that the best way to secure Bitcoin's future is to train the next generation of developers. If you can write basic JavaScript or Python, you have everything you need to start. The learning curve is gentle, and the community is welcoming.",
+      "eli5Available": true
+    },
+    {
+      "id": "build-with-btc",
+      "title": "Build With Bitcoin",
+      "content": "Ready to build something real? **The Lightning Network is the most exciting platform for Bitcoin developers** because it enables instant, cheap payments that open up entirely new types of applications — things that simply weren't possible before.\n\nStart with the **Lightning Development Kit (LDK)** if you want to integrate Lightning payments into an existing app. It's a flexible library available in Rust, Swift, Kotlin, and other languages. For a higher-level approach, **LND (Lightning Network Daemon)** provides a full Lightning node with a well-documented API that you can interact with from any language.\n\n**Some ideas to get you started:** Build a tipping bot for social media. Create a pay-per-article content platform. Make a Lightning-powered vending machine. Build a game where players earn sats. The beauty of Lightning is that **micropayments are finally viable** — you can charge fractions of a cent for individual API calls, articles, songs, or game actions.\n\nThe Bitcoin development community is one of the most helpful in all of tech. **Join the Bitcoin Dev Kit Discord, check out the Lightning Dev Kit documentation, and explore the Bitcoin Optech newsletter** for weekly updates on protocol development. Start small, build something that interests you, and share it with the community. The best Bitcoin apps haven't been built yet — yours could be one of them.",
+      "eli5Available": true
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware Projects",
+      "content": "Bitcoin isn't just software — **there's a growing world of hardware projects** that let you build physical devices for accepting payments, running nodes, and even mining. If you like working with your hands, this is where Bitcoin gets really fun.\n\n**The Bitcoin hardware scene started with DIY point-of-sale terminals.** Using a Raspberry Pi, a small screen, and some open-source software, you can build a device that accepts Lightning payments at a physical store. Projects like LNbits and BTCPay Server have made this surprisingly accessible — you don't need to be an electrical engineer.\n\nRunning your own Bitcoin node is another popular hardware project. **A node is your own copy of the entire Bitcoin blockchain** — your personal verification system that doesn't trust anyone else. Products like Umbrel and Start9 have turned this into a plug-and-play experience, but many people enjoy building their own from scratch using a Raspberry Pi 4 or an old laptop.\n\n**For the truly adventurous, there are Bitcoin mining hardware projects.** From building a small miner that heats your home (yes, really — companies like Heatbit sell Bitcoin miners that double as space heaters) to creating offline transaction-signing devices for maximum security. The maker community around Bitcoin is growing fast, and meetups often feature show-and-tell sessions where builders share their latest creations.",
+      "eli5Available": true
+    }
+  ]
+}

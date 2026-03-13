@@ -1,0 +1,35 @@
+{
+  "slug": "coding",
+  "title": "Construí Sobre Bitcoin",
+  "hook": "No necesitás un título en ciencias de la computación para construir con Bitcoin. Empezá con curiosidad y un navegador.",
+  "icon": "💻",
+  "path": 4,
+  "pathName": "Cómo Funciona Bitcoin",
+  "readTime": 8,
+  "sections": [
+    {
+      "id": "tutorial",
+      "title": "Tutorial Interactivo de Bitcoin",
+      "content": "La mejor forma de entender Bitcoin es **interactuar con él vos mismo.** No solo leer sobre él — realmente crear direcciones, firmar transacciones y ver cómo las piezas encajan. Eso es exactamente lo que ofrece trybitcoin.satsie.dev.\n\nEste tutorial gratuito basado en el navegador te guía a través de **los fundamentos de Bitcoin paso a paso.** Vas a aprender cómo funcionan las claves, cómo se construyen las transacciones, y cómo la blockchain almacena datos — todo a través de ejercicios prácticos que se ejecutan directamente en tu navegador. Sin descargas, sin instalaciones, sin experiencia previa en programación necesaria.\n\n**El tutorial usa conceptos reales de Bitcoin pero en un entorno sandbox seguro**, así que podés experimentar sin arriesgar dinero real. Vas a generar tus propias claves, crear tus propias transacciones y verificarlas vos mismo. Una cosa es leer que Bitcoin usa criptografía de clave pública — otra cosa es realmente crear un par de claves y firmar un mensaje con él.\n\nYa seas un principiante total o un desarrollador que quiere entender Bitcoin a un nivel más profundo, **este es el mejor lugar para empezar.** Guardá trybitcoin.satsie.dev en tus favoritos, separáte una hora, y vas a salir con un entendimiento fundamentalmente mejor de cómo funciona Bitcoin realmente bajo el capó.",
+      "eli5Available": true
+    },
+    {
+      "id": "saving-satoshi",
+      "title": "Saving Satoshi",
+      "content": "**Saving Satoshi (savingsatoshi.com) convierte el aprendizaje de desarrollo Bitcoin en un juego.** En vez de documentación seca y ejercicios de libro de texto, seguís una historia narrativa mientras resolvés desafíos reales de programación que te enseñan cómo funciona Bitcoin a nivel de protocolo.\n\nLa plataforma está diseñada para personas que saben escribir algo de código pero no saben nada sobre desarrollo Bitcoin. **Cada capítulo introduce un nuevo concepto** — hashing, firmas digitales, script, transacciones — a través de desafíos que gradualmente aumentan en dificultad. No estás solo memorizando teoría; estás escribiendo código real que interactúa con Bitcoin.\n\nLo que hace especial a Saving Satoshi es su **enfoque impulsado por la historia.** No estás simplemente completando ejercicios — estás descubriendo un misterio que te mantiene enganchado y motivado para aprender más. Es la gamificación de la educación Bitcoin, y funciona increíblemente bien. Muchos desarrolladores que luchaban con la documentación seca encontraron su momento eureka a través de esta plataforma.\n\n**El proyecto es completamente de código abierto y gratuito.** Fue construido por desarrolladores de Bitcoin que creen que la mejor manera de asegurar el futuro de Bitcoin es entrenar a la próxima generación de desarrolladores. Si podés escribir JavaScript o Python básico, tenés todo lo que necesitás para empezar. La curva de aprendizaje es suave, y la comunidad es acogedora.",
+      "eli5Available": true
+    },
+    {
+      "id": "build-with-btc",
+      "title": "Construí Con Bitcoin",
+      "content": "¿Listo para construir algo real? **La Lightning Network es la plataforma más emocionante para desarrolladores de Bitcoin** porque permite pagos instantáneos y baratos que abren tipos completamente nuevos de aplicaciones — cosas que simplemente no eran posibles antes.\n\nEmpezá con el **Lightning Development Kit (LDK)** si querés integrar pagos Lightning en una app existente. Es una biblioteca flexible disponible en Rust, Swift, Kotlin y otros lenguajes. Para un enfoque de más alto nivel, **LND (Lightning Network Daemon)** proporciona un nodo Lightning completo con una API bien documentada con la que podés interactuar desde cualquier lenguaje.\n\n**Algunas ideas para empezar:** Construí un bot de propinas para redes sociales. Creá una plataforma de contenido de pago por artículo. Hacé una máquina expendedora con Lightning. Construí un juego donde los jugadores ganan sats. La belleza de Lightning es que **los micropagos finalmente son viables** — podés cobrar fracciones de centavo por llamadas individuales a API, artículos, canciones o acciones de juego.\n\nLa comunidad de desarrollo Bitcoin es una de las más servicial en toda la tecnología. **Unite al Discord de Bitcoin Dev Kit, consultá la documentación de Lightning Dev Kit, y explorá el newsletter de Bitcoin Optech** para actualizaciones semanales sobre desarrollo del protocolo. Empezá pequeño, construí algo que te interese, y compartilo con la comunidad. Las mejores apps de Bitcoin aún no han sido construidas — la tuya podría ser una de ellas.",
+      "eli5Available": true
+    },
+    {
+      "id": "hardware",
+      "title": "Proyectos de Hardware",
+      "content": "Bitcoin no es solo software — **hay un mundo creciente de proyectos de hardware** que te permiten construir dispositivos físicos para aceptar pagos, correr nodos e incluso minar. Si te gusta trabajar con las manos, acá es donde Bitcoin se pone realmente divertido.\n\n**La escena de hardware Bitcoin comenzó con terminales de punto de venta hechos por uno mismo.** Usando una Raspberry Pi, una pantalla pequeña y algo de software de código abierto, podés construir un dispositivo que acepta pagos Lightning en una tienda física. Proyectos como LNbits y BTCPay Server han hecho esto sorprendentemente accesible — no necesitás ser ingeniero eléctrico.\n\nCorrer tu propio nodo de Bitcoin es otro proyecto de hardware popular. **Un nodo es tu propia copia de toda la blockchain de Bitcoin** — tu sistema personal de verificación que no confía en nadie más. Productos como Umbrel y Start9 han convertido esto en una experiencia de enchufar y usar, pero muchas personas disfrutan construir el suyo desde cero usando una Raspberry Pi 4 o una laptop vieja.\n\n**Para los verdaderamente aventureros, hay proyectos de hardware de minería de Bitcoin.** Desde construir un pequeño minero que calienta tu casa (sí, en serio — empresas como Heatbit venden mineros de Bitcoin que funcionan como calefactores) hasta crear dispositivos de firma de transacciones offline para máxima seguridad. La comunidad maker alrededor de Bitcoin está creciendo rápido, y los meetups frecuentemente incluyen sesiones de mostrar y contar donde los constructores comparten sus últimas creaciones.",
+      "eli5Available": true
+    }
+  ]
+}

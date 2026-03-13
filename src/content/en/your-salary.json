@@ -1,0 +1,31 @@
+{
+  "slug": "your-salary",
+  "title": "Your Salary Is a Lie",
+  "hook": "You got a raise? Think again.",
+  "icon": "💸",
+  "path": 1,
+  "pathName": "The Money Problem",
+  "readTime": 8,
+  "sections": [
+    {
+      "id": "raise-illusion",
+      "title": "The Raise Illusion",
+      "content": "Congratulations on that 3% raise. Your boss smiled, HR sent the email, maybe you even celebrated a little. Here's the problem: **inflation was 4%.** You didn't get a raise — you got a pay cut disguised as a raise.\n\nThis is the most common trick in the modern economy, and almost nobody catches it. Your paycheck goes up by a few percentage points, and it feels like progress. But if prices went up faster than your salary, you can actually buy **less** with your new, bigger paycheck than you could with your old, smaller one. Your number went up. Your purchasing power went down.\n\nLet's make this concrete. Say you earned $50,000 in 2020 and got that 3% raise to $51,500 in 2021. Sounds good, right? But inflation in 2021 was 7%. That means the things you bought in 2020 for $50,000 now cost $53,500. Your raise gave you $51,500 to cover $53,500 worth of expenses. **You're $2,000 poorer** despite technically earning more.\n\nNow multiply this across your entire career. If your salary grows 3% per year but inflation averages 4%, you're falling behind every single year. After 10 years, you've lost ground significantly. After 20 years, your standard of living has noticeably declined. After 30 years, you might be making three times your starting salary in raw numbers but buying less than when you started. **The numbers on your paycheck are getting bigger while your life is getting smaller.**\n\nThis is why your parents could afford a house on one income and you can barely afford an apartment on two. They weren't smarter or harder working — they just earned money when it was worth more.",
+      "interactive": "interactive-chart",
+      "eli5Available": false
+    },
+    {
+      "id": "real-vs-nominal",
+      "title": "Real Wages vs. Nominal Wages",
+      "content": "Economists use two terms that sound boring but will change how you see your entire financial life: **nominal wages** and **real wages.** Nominal wages are the raw number on your paycheck. Real wages are what that number actually buys. The difference between them is inflation — and it's massive.\n\n**The median American worker earned $7,787 in 1975.** Today, the median worker earns about $60,000. On paper, that looks like incredible progress — nearly 8x more! But adjust for inflation, and the picture is devastating. That $7,787 from 1975 has the purchasing power of roughly $44,000 in today's dollars. So real wages have only increased about 36% in nearly 50 years. That's less than 1% per year of actual improvement in living standards — while productivity has skyrocketed over 60%.\n\nWhere did all that productivity go? **To the owners of assets, not to the workers.** The stock market is up over 10,000% since 1975. Real estate values have exploded. Corporate profits are at all-time highs. Workers are producing dramatically more value, but they're not keeping any of it. The surplus goes to shareholders, executives, and asset owners — the people who benefit most from money printing.\n\nThis isn't just an American problem. In Mexico, minimum wage barely keeps pace with tortilla prices. In Argentina, workers demand raises every few months just to stay even with runaway inflation. In Brazil, the disconnect between nominal and real wages has created a generation that works harder than ever but can afford less than their parents.\n\nHere's the Bitcoin angle: **Bitcoin fixes the denominator.** When you measure your salary in a currency that loses value every year, your wages will always seem to grow while your purchasing power shrinks. If you measured your salary in Bitcoin — or in any form of sound money — the deception would be immediately obvious. Your boss isn't paying you more. **The measuring stick is just getting shorter.**",
+      "interactive": "quote-card",
+      "eli5Available": true
+    },
+    {
+      "id": "what-salary-should-be",
+      "title": "What Your Salary Should Actually Be",
+      "content": "Let's do some math that will make you angry. If wages had kept pace with productivity growth since 1971 (when the US left the gold standard), **the median household income would be over $100,000 today** instead of roughly $60,000. That's $40,000 per year that was effectively stolen from the average American family through monetary debasement.\n\nIt gets worse when you look at specific professions. A teacher in 1970 could buy a house on a single salary. Today, teachers in most cities can't even afford rent on a single salary. An engineer's starting salary in 1970 bought roughly 4x more housing than an engineer's starting salary buys today. A doctor's purchasing power has declined by nearly half when measured against real assets like housing and education.\n\nThis is the Great Theft that nobody talks about. **Your labor is worth more than ever.** Productivity per worker has nearly tripled since the 1970s. You produce more, know more, and work with better tools than any generation before you. But the gains from your increased productivity are being captured by the monetary system — siphoned off through inflation and redistributed to those who own the assets that inflate in price.\n\nBitcoin offers a different path. When you save in Bitcoin, you're saving in money that can't be debased. Your stored labor holds its value — or even increases in value — rather than being slowly drained year after year. **One hour of work today, saved in Bitcoin, could buy more in 10 years than it buys today.** That's the exact opposite of what happens when you save in dollars, pesos, or any government currency.\n\nYou can't change the monetary system overnight. But you can change how you store the value of your work. Every paycheck, you have a choice: leave your savings in a currency that's guaranteed to lose value, or convert some of it into the hardest money ever created. The choice should be obvious — but first, you had to see the lie.",
+      "eli5Available": false
+    }
+  ]
+}

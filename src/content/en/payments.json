@@ -1,0 +1,35 @@
+{
+  "slug": "payments",
+  "title": "Bitcoin Payments",
+  "hook": "Sending money should be as easy as sending a text. With Lightning, it finally is.",
+  "icon": "⚡",
+  "path": 4,
+  "pathName": "How Bitcoin Works",
+  "readTime": 9,
+  "sections": [
+    {
+      "id": "vs-visa",
+      "title": "Bitcoin vs Visa",
+      "content": "When you swipe your Visa card, the transaction feels instant — but it's not. **Your payment doesn't actually settle for 2-3 business days.** The merchant doesn't get the money right away, Visa takes a 2-3% cut, and the whole system relies on trust between a half-dozen intermediaries.\n\nBitcoin on the Lightning Network settles in **under one second, with finality.** That means the money actually moves — it's not a promise to pay later. The merchant receives the payment instantly, with fees that are typically less than a penny. No intermediaries, no chargebacks, no 3-day waiting period.\n\n**Visa doesn't work for everyone.** If you're one of the 1.4 billion adults without a bank account, you can't get a Visa card. If you live in a sanctioned country, Visa won't process your payments. If your transaction gets flagged by an algorithm, your card gets declined. Bitcoin doesn't care who you are, where you live, or what time it is — if you have a phone, you can pay.\n\nHere's something most people don't realize: **Visa can process about 65,000 transactions per second, but it typically handles around 1,700.** The Lightning Network's theoretical capacity is virtually unlimited because it works through payment channels rather than a single bottleneck. And unlike Visa, it runs on an open protocol that anyone can build on — no partnership agreements, no application process, no permission required.",
+      "eli5Available": true
+    },
+    {
+      "id": "lightning",
+      "title": "The Lightning Network",
+      "content": "**Think of the Lightning Network like opening a tab at a bar.** When you open a tab, you give the bartender your card once, order drinks all night, and settle up at the end. You don't swipe your card for every single beer — that would be slow and annoying. Lightning works the same way.\n\nTwo people (or a person and a business) open a \"payment channel\" between them, which is like opening a tab. **They can then send payments back and forth instantly, unlimited times, for almost zero fees.** When they're done, the final balance is settled on the main Bitcoin blockchain — just like closing your tab at the end of the night.\n\nThe magic is that **you don't need a direct channel with everyone you want to pay.** If you have a channel with Alice, and Alice has one with Bob, your payment can hop through Alice to reach Bob — all in under a second, all trustlessly. The network routes payments automatically, finding the fastest and cheapest path.\n\n**In practice, Lightning is ridiculously simple.** You open a Lightning wallet on your phone, load some Bitcoin into it, and scan a QR code to pay. The payment arrives in less than a second. No account numbers, no routing numbers, no bank name, no waiting. If you've ever used Venmo, the experience is similar — except Lightning works across borders, has no daily limits, and doesn't require a bank account.",
+      "eli5Available": true
+    },
+    {
+      "id": "remittances",
+      "title": "Remittances",
+      "content": "**Every year, migrant workers send over $700 billion back to their families in their home countries.** These transfers are called remittances, and for millions of families in Latin America, Africa, and Asia, this money is their primary source of income. It pays for food, school, medicine, and rent.\n\nThe problem? **Traditional remittance companies like Western Union and MoneyGram charge 6-10% in fees.** That means for every $200 a mother in Los Angeles sends to her family in El Salvador, $12-$20 disappears into fees. Across all remittances globally, that's roughly $45 billion per year taken from the world's poorest families.\n\n**Bitcoin through the Lightning Network can reduce those fees to nearly zero.** A worker in the US can send $200 to El Salvador in seconds, with fees of a few cents instead of $20. Apps like Strike make this as easy as sending a text message. The recipient can either keep the Bitcoin or instantly convert to local currency.\n\n**El Salvador alone receives about $7 billion in remittances annually** — roughly 24% of the country's GDP. If all those transfers moved to Bitcoin rails, families would save hundreds of millions of dollars per year. That's not theoretical — it's already happening. Strike reported that remittances to El Salvador through their app have grown consistently since launching, saving families real money on every transfer.",
+      "eli5Available": true
+    },
+    {
+      "id": "get-lightning",
+      "title": "Get Your Lightning Address",
+      "content": "A Lightning address looks just like an email address — something like **yourname@walletofsatoshi.com** — and it works the same way. Anyone can send you Bitcoin just by knowing your address. No complicated strings of numbers and letters, no QR codes required.\n\n**Setting up your Lightning address takes about 2 minutes.** Download a Lightning wallet like Wallet of Satoshi (available worldwide), Phoenix (great for privacy), or Strike (US, El Salvador). Create an account, and you'll automatically get a Lightning address that you can share with anyone.\n\nOnce you have your address, **put it everywhere.** Add it to your Twitter/X bio, your email signature, your website, your business card. Anyone who sees it can send you sats (the smallest unit of Bitcoin) instantly. Some people receive tips for great tweets, donations for open-source work, or payments for freelance gigs — all through their Lightning address.\n\nHere's a quick comparison of popular wallets: **Wallet of Satoshi** is the simplest — download, open, done. **Phoenix** gives you more control and better privacy but requires a small channel-opening fee. **Strike** is great if you want easy conversion between Bitcoin and dollars. **Muun** offers a good balance of simplicity and self-custody. Try one, send yourself a small payment, and experience the future of money firsthand.",
+      "eli5Available": true
+    }
+  ]
+}
