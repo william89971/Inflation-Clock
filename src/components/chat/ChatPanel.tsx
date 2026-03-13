@@ -5,6 +5,8 @@ import { useI18n, useCurrentLocale } from "@/locales/client";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChatMessage } from "./ChatMessage";
 import { getUserData } from "@/lib/user-context";
+import { getCachedProfile, getSessionId } from "@/lib/profile";
+import { getPersonalizedQuestions } from "@/lib/suggested-questions";
 
 interface Message {
   role: "user" | "assistant";
@@ -26,12 +28,23 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
   const [messageCount, setMessageCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const starters = [
+  // Use personalized questions if profile exists, otherwise fall back to i18n starters
+  const [starters, setStarters] = useState<string[]>([
     t("chat.starter1"),
     t("chat.starter2"),
     t("chat.starter3"),
     t("chat.starter4"),
-  ];
+  ]);
+
+  useEffect(() => {
+    const profile = getCachedProfile();
+    if (profile) {
+      const personalized = getPersonalizedQuestions(profile);
+      if (personalized.length > 0) {
+        setStarters(personalized.slice(0, 4));
+      }
+    }
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,6 +74,7 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
           })),
           country: userData.country,
           language: locale,
+          session_id: getSessionId(),
         }),
       });
 

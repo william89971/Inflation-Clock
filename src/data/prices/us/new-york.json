@@ -1,0 +1,170 @@
+[
+  {
+    "category": "groceries",
+    "item": "eggs_dozen",
+    "item_label": { "en": "A dozen eggs", "es": "Una docena de huevos" },
+    "emoji": "🥚",
+    "prices": [
+      { "date": "2015-01", "price": 2.68 },
+      { "date": "2016-01", "price": 2.42 },
+      { "date": "2017-01", "price": 1.92 },
+      { "date": "2018-01", "price": 2.05 },
+      { "date": "2019-01", "price": 1.88 },
+      { "date": "2020-01", "price": 1.95 },
+      { "date": "2021-01", "price": 2.32 },
+      { "date": "2022-01", "price": 2.62 },
+      { "date": "2023-01", "price": 5.68 },
+      { "date": "2024-01", "price": 3.95 },
+      { "date": "2025-01", "price": 5.28 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "groceries",
+    "item": "bread_loaf",
+    "item_label": { "en": "A loaf of bread", "es": "Una barra de pan" },
+    "emoji": "🍞",
+    "prices": [
+      { "date": "2015-01", "price": 2.95 },
+      { "date": "2016-01", "price": 3.02 },
+      { "date": "2017-01", "price": 3.10 },
+      { "date": "2018-01", "price": 3.18 },
+      { "date": "2019-01", "price": 3.25 },
+      { "date": "2020-01", "price": 3.35 },
+      { "date": "2021-01", "price": 3.52 },
+      { "date": "2022-01", "price": 3.88 },
+      { "date": "2023-01", "price": 4.42 },
+      { "date": "2024-01", "price": 4.58 },
+      { "date": "2025-01", "price": 4.78 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "groceries",
+    "item": "milk_gallon",
+    "item_label": { "en": "A gallon of milk", "es": "Un galón de leche" },
+    "emoji": "🥛",
+    "prices": [
+      { "date": "2015-01", "price": 3.88 },
+      { "date": "2016-01", "price": 3.62 },
+      { "date": "2017-01", "price": 3.48 },
+      { "date": "2018-01", "price": 3.35 },
+      { "date": "2019-01", "price": 3.55 },
+      { "date": "2020-01", "price": 3.72 },
+      { "date": "2021-01", "price": 4.08 },
+      { "date": "2022-01", "price": 4.52 },
+      { "date": "2023-01", "price": 4.98 },
+      { "date": "2024-01", "price": 4.78 },
+      { "date": "2025-01", "price": 5.05 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "transport",
+    "item": "gasoline_gallon",
+    "item_label": { "en": "A gallon of gasoline", "es": "Un galón de gasolina" },
+    "emoji": "⛽",
+    "prices": [
+      { "date": "2015-01", "price": 2.65 },
+      { "date": "2016-01", "price": 2.38 },
+      { "date": "2017-01", "price": 2.72 },
+      { "date": "2018-01", "price": 3.02 },
+      { "date": "2019-01", "price": 2.88 },
+      { "date": "2020-01", "price": 2.62 },
+      { "date": "2021-01", "price": 3.15 },
+      { "date": "2022-01", "price": 4.22 },
+      { "date": "2023-01", "price": 3.65 },
+      { "date": "2024-01", "price": 3.42 },
+      { "date": "2025-01", "price": 3.58 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "housing",
+    "item": "avg_rent",
+    "item_label": { "en": "Average monthly rent", "es": "Renta mensual promedio" },
+    "emoji": "🏠",
+    "prices": [
+      { "date": "2015-01", "price": 2150 },
+      { "date": "2016-01", "price": 2280 },
+      { "date": "2017-01", "price": 2390 },
+      { "date": "2018-01", "price": 2520 },
+      { "date": "2019-01", "price": 2650 },
+      { "date": "2020-01", "price": 2480 },
+      { "date": "2021-01", "price": 2580 },
+      { "date": "2022-01", "price": 2920 },
+      { "date": "2023-01", "price": 3180 },
+      { "date": "2024-01", "price": 3350 },
+      { "date": "2025-01", "price": 3480 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "utilities",
+    "item": "electricity_kwh",
+    "item_label": { "en": "Electricity (per kWh)", "es": "Electricidad (por kWh)" },
+    "emoji": "⚡",
+    "prices": [
+      { "date": "2015-01", "price": 0.192 },
+      { "date": "2016-01", "price": 0.198 },
+      { "date": "2017-01", "price": 0.205 },
+      { "date": "2018-01", "price": 0.215 },
+      { "date": "2019-01", "price": 0.225 },
+      { "date": "2020-01", "price": 0.232 },
+      { "date": "2021-01", "price": 0.242 },
+      { "date": "2022-01", "price": 0.278 },
+      { "date": "2023-01", "price": 0.312 },
+      { "date": "2024-01", "price": 0.335 },
+      { "date": "2025-01", "price": 0.352 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  },
+  {
+    "category": "transport",
+    "item": "public_transport",
+    "item_label": { "en": "Public transport (single ride)", "es": "Transporte público (viaje sencillo)" },
+    "emoji": "🚌",
+    "prices": [
+      { "date": "2015-01", "price": 2.75 },
+      { "date": "2016-01", "price": 2.75 },
+      { "date": "2017-01", "price": 2.75 },
+      { "date": "2018-01", "price": 2.75 },
+      { "date": "2019-01", "price": 2.75 },
+      { "date": "2020-01", "price": 2.75 },
+      { "date": "2021-01", "price": 2.75 },
+      { "date": "2022-01", "price": 2.75 },
+      { "date": "2023-01", "price": 2.90 },
+      { "date": "2024-01", "price": 2.90 },
+      { "date": "2025-01", "price": 2.90 }
+    ],
+    "currency": "USD",
+    "source": "MTA New York"
+  },
+  {
+    "category": "groceries",
+    "item": "chicken_kg",
+    "item_label": { "en": "Chicken (per kg)", "es": "Pollo (por kg)" },
+    "emoji": "🍗",
+    "prices": [
+      { "date": "2015-01", "price": 4.72 },
+      { "date": "2016-01", "price": 4.58 },
+      { "date": "2017-01", "price": 4.65 },
+      { "date": "2018-01", "price": 4.82 },
+      { "date": "2019-01", "price": 4.95 },
+      { "date": "2020-01", "price": 5.08 },
+      { "date": "2021-01", "price": 5.52 },
+      { "date": "2022-01", "price": 6.28 },
+      { "date": "2023-01", "price": 6.72 },
+      { "date": "2024-01", "price": 6.48 },
+      { "date": "2025-01", "price": 6.85 }
+    ],
+    "currency": "USD",
+    "source": "BLS Average Price Data"
+  }
+]

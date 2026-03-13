@@ -1,0 +1,8 @@
+[
+  {"year":1980,"avg_monthly_rent":50,"avg_home_price":5000,"milk_gallon":1.00,"bread_loaf":0.15,"eggs_dozen":0.50,"gas_gallon":0.80,"min_wage_hourly":0.25,"median_income_monthly":100,"college_yearly":200,"currency":"USD","source":"BCR El Salvador / World Bank"},
+  {"year":1990,"avg_monthly_rent":80,"avg_home_price":10000,"milk_gallon":1.50,"bread_loaf":0.25,"eggs_dozen":0.80,"gas_gallon":1.10,"min_wage_hourly":0.40,"median_income_monthly":180,"college_yearly":400,"currency":"USD","source":"BCR El Salvador / World Bank"},
+  {"year":2000,"avg_monthly_rent":120,"avg_home_price":18000,"milk_gallon":2.00,"bread_loaf":0.35,"eggs_dozen":1.00,"gas_gallon":1.40,"min_wage_hourly":0.60,"median_income_monthly":250,"college_yearly":600,"currency":"USD","source":"BCR El Salvador / World Bank"},
+  {"year":2010,"avg_monthly_rent":200,"avg_home_price":35000,"milk_gallon":3.00,"bread_loaf":0.50,"eggs_dozen":1.50,"gas_gallon":2.50,"min_wage_hourly":1.00,"median_income_monthly":350,"college_yearly":1200,"currency":"USD","source":"BCR El Salvador / World Bank"},
+  {"year":2020,"avg_monthly_rent":300,"avg_home_price":55000,"milk_gallon":3.80,"bread_loaf":0.60,"eggs_dozen":2.00,"gas_gallon":2.80,"min_wage_hourly":1.25,"median_income_monthly":400,"college_yearly":2000,"currency":"USD","source":"BCR El Salvador / World Bank"},
+  {"year":2025,"avg_monthly_rent":400,"avg_home_price":75000,"milk_gallon":4.50,"bread_loaf":0.80,"eggs_dozen":3.50,"gas_gallon":3.50,"min_wage_hourly":1.50,"median_income_monthly":500,"college_yearly":3000,"currency":"USD","source":"BCR El Salvador / World Bank (estimates)"}
+]

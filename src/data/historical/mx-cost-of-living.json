@@ -1,0 +1,9 @@
+[
+  {"year":1970,"avg_monthly_rent":200,"avg_home_price":25000,"milk_gallon":2.0,"bread_loaf":0.5,"eggs_dozen":2.0,"gas_gallon":1.0,"min_wage_hourly":0.5,"median_income_monthly":600,"college_yearly":500,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":1980,"avg_monthly_rent":800,"avg_home_price":80000,"milk_gallon":5.0,"bread_loaf":1.5,"eggs_dozen":5.0,"gas_gallon":3.0,"min_wage_hourly":1.5,"median_income_monthly":2500,"college_yearly":2000,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":1990,"avg_monthly_rent":1500,"avg_home_price":200000,"milk_gallon":8.0,"bread_loaf":3.0,"eggs_dozen":8.0,"gas_gallon":5.0,"min_wage_hourly":3.0,"median_income_monthly":5000,"college_yearly":5000,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":2000,"avg_monthly_rent":3000,"avg_home_price":400000,"milk_gallon":14.0,"bread_loaf":8.0,"eggs_dozen":15.0,"gas_gallon":8.0,"min_wage_hourly":5.8,"median_income_monthly":8000,"college_yearly":12000,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":2010,"avg_monthly_rent":5000,"avg_home_price":700000,"milk_gallon":18.0,"bread_loaf":12.0,"eggs_dozen":22.0,"gas_gallon":12.0,"min_wage_hourly":8.5,"median_income_monthly":12000,"college_yearly":25000,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":2020,"avg_monthly_rent":8000,"avg_home_price":1500000,"milk_gallon":24.0,"bread_loaf":18.0,"eggs_dozen":35.0,"gas_gallon":20.0,"min_wage_hourly":20.5,"median_income_monthly":16000,"college_yearly":45000,"currency":"MXN","source":"INEGI / Banco de México"},
+  {"year":2025,"avg_monthly_rent":12000,"avg_home_price":2500000,"milk_gallon":32.0,"bread_loaf":25.0,"eggs_dozen":48.0,"gas_gallon":25.0,"min_wage_hourly":34.3,"median_income_monthly":20000,"college_yearly":60000,"currency":"MXN","source":"INEGI / Banco de México (estimates)"}
+]

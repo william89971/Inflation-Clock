@@ -1,0 +1,7 @@
+[
+  {"year":1990,"avg_monthly_rent":200,"avg_home_price":30000,"milk_gallon":1.50,"bread_loaf":0.50,"eggs_dozen":1.00,"gas_gallon":0.80,"min_wage_hourly":0.50,"median_income_monthly":400,"college_yearly":0,"currency":"ARS","source":"INDEC Argentina / World Bank"},
+  {"year":2000,"avg_monthly_rent":400,"avg_home_price":60000,"milk_gallon":2.50,"bread_loaf":1.00,"eggs_dozen":2.00,"gas_gallon":1.50,"min_wage_hourly":1.00,"median_income_monthly":800,"college_yearly":0,"currency":"ARS","source":"INDEC Argentina / World Bank"},
+  {"year":2010,"avg_monthly_rent":2000,"avg_home_price":150000,"milk_gallon":8.00,"bread_loaf":4.00,"eggs_dozen":8.00,"gas_gallon":5.00,"min_wage_hourly":4.50,"median_income_monthly":4000,"college_yearly":0,"currency":"ARS","source":"INDEC Argentina / World Bank"},
+  {"year":2020,"avg_monthly_rent":25000,"avg_home_price":1500000,"milk_gallon":80.00,"bread_loaf":40.00,"eggs_dozen":90.00,"gas_gallon":50.00,"min_wage_hourly":35.00,"median_income_monthly":50000,"college_yearly":0,"currency":"ARS","source":"INDEC Argentina / World Bank"},
+  {"year":2025,"avg_monthly_rent":250000,"avg_home_price":15000000,"milk_gallon":1500.00,"bread_loaf":800.00,"eggs_dozen":2500.00,"gas_gallon":1200.00,"min_wage_hourly":600.00,"median_income_monthly":800000,"college_yearly":0,"currency":"ARS","source":"INDEC Argentina (estimates)"}
+]

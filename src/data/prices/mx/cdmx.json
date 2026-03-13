@@ -1,0 +1,170 @@
+[
+  {
+    "category": "groceries",
+    "item": "eggs_dozen",
+    "item_label": { "en": "A dozen eggs", "es": "Una docena de huevos" },
+    "emoji": "🥚",
+    "prices": [
+      { "date": "2015-01", "price": 28.50 },
+      { "date": "2016-01", "price": 30.20 },
+      { "date": "2017-01", "price": 33.80 },
+      { "date": "2018-01", "price": 35.50 },
+      { "date": "2019-01", "price": 37.20 },
+      { "date": "2020-01", "price": 39.80 },
+      { "date": "2021-01", "price": 42.50 },
+      { "date": "2022-01", "price": 48.60 },
+      { "date": "2023-01", "price": 55.80 },
+      { "date": "2024-01", "price": 57.50 },
+      { "date": "2025-01", "price": 60.00 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  },
+  {
+    "category": "groceries",
+    "item": "bread_loaf",
+    "item_label": { "en": "A loaf of bread", "es": "Una barra de pan" },
+    "emoji": "🍞",
+    "prices": [
+      { "date": "2015-01", "price": 22.00 },
+      { "date": "2016-01", "price": 23.50 },
+      { "date": "2017-01", "price": 26.00 },
+      { "date": "2018-01", "price": 27.50 },
+      { "date": "2019-01", "price": 29.00 },
+      { "date": "2020-01", "price": 30.50 },
+      { "date": "2021-01", "price": 33.00 },
+      { "date": "2022-01", "price": 37.50 },
+      { "date": "2023-01", "price": 41.00 },
+      { "date": "2024-01", "price": 43.50 },
+      { "date": "2025-01", "price": 45.00 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  },
+  {
+    "category": "groceries",
+    "item": "milk_liter",
+    "item_label": { "en": "A liter of milk", "es": "Un litro de leche" },
+    "emoji": "🥛",
+    "prices": [
+      { "date": "2015-01", "price": 15.50 },
+      { "date": "2016-01", "price": 16.20 },
+      { "date": "2017-01", "price": 17.80 },
+      { "date": "2018-01", "price": 18.50 },
+      { "date": "2019-01", "price": 19.50 },
+      { "date": "2020-01", "price": 20.80 },
+      { "date": "2021-01", "price": 22.00 },
+      { "date": "2022-01", "price": 24.50 },
+      { "date": "2023-01", "price": 26.80 },
+      { "date": "2024-01", "price": 27.50 },
+      { "date": "2025-01", "price": 28.00 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  },
+  {
+    "category": "transport",
+    "item": "gasoline_liter",
+    "item_label": { "en": "A liter of gasoline", "es": "Un litro de gasolina" },
+    "emoji": "⛽",
+    "prices": [
+      { "date": "2015-01", "price": 13.16 },
+      { "date": "2016-01", "price": 13.98 },
+      { "date": "2017-01", "price": 16.52 },
+      { "date": "2018-01", "price": 18.25 },
+      { "date": "2019-01", "price": 19.50 },
+      { "date": "2020-01", "price": 19.80 },
+      { "date": "2021-01", "price": 20.82 },
+      { "date": "2022-01", "price": 22.15 },
+      { "date": "2023-01", "price": 22.85 },
+      { "date": "2024-01", "price": 23.50 },
+      { "date": "2025-01", "price": 24.00 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  },
+  {
+    "category": "housing",
+    "item": "avg_rent",
+    "item_label": { "en": "Average monthly rent", "es": "Renta mensual promedio" },
+    "emoji": "🏠",
+    "prices": [
+      { "date": "2015-01", "price": 5800 },
+      { "date": "2016-01", "price": 6200 },
+      { "date": "2017-01", "price": 6800 },
+      { "date": "2018-01", "price": 7200 },
+      { "date": "2019-01", "price": 7800 },
+      { "date": "2020-01", "price": 8200 },
+      { "date": "2021-01", "price": 8800 },
+      { "date": "2022-01", "price": 9800 },
+      { "date": "2023-01", "price": 10800 },
+      { "date": "2024-01", "price": 11500 },
+      { "date": "2025-01", "price": 12000 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  },
+  {
+    "category": "utilities",
+    "item": "electricity_kwh",
+    "item_label": { "en": "Electricity (per kWh)", "es": "Electricidad (por kWh)" },
+    "emoji": "⚡",
+    "prices": [
+      { "date": "2015-01", "price": 0.82 },
+      { "date": "2016-01", "price": 0.85 },
+      { "date": "2017-01", "price": 0.92 },
+      { "date": "2018-01", "price": 0.98 },
+      { "date": "2019-01", "price": 1.05 },
+      { "date": "2020-01", "price": 1.10 },
+      { "date": "2021-01", "price": 1.18 },
+      { "date": "2022-01", "price": 1.28 },
+      { "date": "2023-01", "price": 1.38 },
+      { "date": "2024-01", "price": 1.45 },
+      { "date": "2025-01", "price": 1.50 }
+    ],
+    "currency": "MXN",
+    "source": "CFE / INEGI"
+  },
+  {
+    "category": "transport",
+    "item": "public_transport",
+    "item_label": { "en": "Public transport (single ride)", "es": "Transporte público (viaje sencillo)" },
+    "emoji": "🚌",
+    "prices": [
+      { "date": "2015-01", "price": 5.00 },
+      { "date": "2016-01", "price": 5.00 },
+      { "date": "2017-01", "price": 5.00 },
+      { "date": "2018-01", "price": 5.00 },
+      { "date": "2019-01", "price": 5.00 },
+      { "date": "2020-01", "price": 5.00 },
+      { "date": "2021-01", "price": 5.00 },
+      { "date": "2022-01", "price": 5.00 },
+      { "date": "2023-01", "price": 5.00 },
+      { "date": "2024-01", "price": 7.50 },
+      { "date": "2025-01", "price": 7.50 }
+    ],
+    "currency": "MXN",
+    "source": "Metro CDMX"
+  },
+  {
+    "category": "groceries",
+    "item": "chicken_kg",
+    "item_label": { "en": "Chicken (per kg)", "es": "Pollo (por kg)" },
+    "emoji": "🍗",
+    "prices": [
+      { "date": "2015-01", "price": 52.00 },
+      { "date": "2016-01", "price": 55.50 },
+      { "date": "2017-01", "price": 60.00 },
+      { "date": "2018-01", "price": 65.00 },
+      { "date": "2019-01", "price": 68.50 },
+      { "date": "2020-01", "price": 72.00 },
+      { "date": "2021-01", "price": 78.00 },
+      { "date": "2022-01", "price": 88.00 },
+      { "date": "2023-01", "price": 98.00 },
+      { "date": "2024-01", "price": 105.00 },
+      { "date": "2025-01", "price": 110.00 }
+    ],
+    "currency": "MXN",
+    "source": "INEGI / PROFECO"
+  }
+]

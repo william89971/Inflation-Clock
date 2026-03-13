@@ -1,7 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { getSupabaseServer } from "@/lib/supabase-server";
 
-const SYSTEM_PROMPT = `You are a Bitcoin and economics tutor for The Inflation Clock education platform. Your job is to explain monetary concepts and Bitcoin in the simplest possible terms.
+const BASE_SYSTEM_PROMPT = `You are a Bitcoin and economics tutor for The Inflation Clock education platform. Your job is to explain monetary concepts and Bitcoin in the simplest possible terms.
 
 Rules:
 - NEVER use crypto jargon (blockchain, hash rate, decentralized, node, proof of work, DeFi, Web3, etc.) unless the user specifically asks about technical details
@@ -17,6 +18,84 @@ Rules:
 - When comparing Bitcoin to other things, be factual and balanced but don't be afraid to highlight Bitcoin's advantages clearly.
 - IMPORTANT: Bitcoin and crypto are NOT the same thing. If asked about crypto, altcoins, or other tokens, clearly explain that Bitcoin is fundamentally different and why.`;
 
+interface UserProfileData {
+  country?: string;
+  country_code?: string;
+  age?: number;
+  monthly_income?: number;
+  currency?: string;
+  lifetime_loss?: number;
+  daily_loss?: number;
+  monthly_loss?: number;
+  monthly_rent?: number;
+  monthly_groceries?: number;
+  monthly_transport?: number;
+  modules_completed?: string[];
+  family_members?: { name: string; relationship: string }[];
+}
+
+function buildPersonalizedPrompt(
+  profile: UserProfileData | null,
+  country: string,
+  language: string
+): string {
+  if (!profile || !profile.monthly_income) {
+    // No profile data — use simple context like before
+    return `${BASE_SYSTEM_PROMPT}\n\nUser context: Country: ${country || "unknown"}, Preferred language: ${language || "en"}`;
+  }
+
+  let contextBlock = "";
+  const cur = profile.currency || "USD";
+
+  if (profile.country) {
+    contextBlock += `The user lives in ${profile.country}.`;
+  }
+  if (profile.age) {
+    contextBlock += ` They are ${profile.age} years old.`;
+  }
+  if (profile.monthly_income) {
+    contextBlock += ` Their monthly income is ${cur} ${profile.monthly_income.toLocaleString()}.`;
+  }
+  if (profile.lifetime_loss) {
+    contextBlock += ` They have lost approximately ${cur} ${Math.round(profile.lifetime_loss).toLocaleString()} to inflation in their lifetime.`;
+  }
+  if (profile.daily_loss) {
+    contextBlock += ` They lose about ${cur} ${profile.daily_loss.toFixed(2)} per day to inflation.`;
+  }
+  if (profile.monthly_rent) {
+    contextBlock += ` Their monthly rent is ${cur} ${profile.monthly_rent.toLocaleString()}.`;
+  }
+  if (profile.monthly_groceries) {
+    contextBlock += ` They spend ${cur} ${profile.monthly_groceries.toLocaleString()}/month on groceries.`;
+  }
+  if (profile.modules_completed?.length) {
+    contextBlock += ` They have completed these education modules: ${profile.modules_completed.join(", ")}.`;
+  }
+  if (profile.family_members?.length) {
+    const familyDesc = profile.family_members
+      .map((f) => `${f.name} (${f.relationship})`)
+      .join(", ");
+    contextBlock += ` Family members: ${familyDesc}.`;
+  }
+
+  return `${BASE_SYSTEM_PROMPT}
+
+USER CONTEXT:
+${contextBlock}
+
+PERSONALIZATION RULES:
+- Use this personal context to make EVERY answer specific to their situation
+- When they ask about inflation, reference THEIR numbers: "Based on your income of ${cur} ${profile.monthly_income?.toLocaleString()}, you're losing about ${cur} ${profile.daily_loss?.toFixed(2) || "?"} per day"
+- When they ask about Bitcoin savings, use THEIR income to calculate examples
+- Reference their country's specific economic situation
+- If they've completed modules, don't re-explain those concepts — build on them
+- If they have family data, you can reference generational comparisons
+- Use examples from their daily life: their rent, their groceries, their local prices
+- When they ask "what should I do", guide them to the Get Started module and relevant platforms for their country
+
+User context: Country: ${country || profile.country || "unknown"}, Preferred language: ${language || "en"}`;
+}
+
 export async function POST(req: Request) {
   // Rate limit: 10 requests per minute per IP
   const ip = getClientIp(req);
@@ -31,7 +110,7 @@ export async function POST(req: Request) {
     });
   }
 
-  let body: { messages?: unknown[]; country?: string; language?: string };
+  let body: { messages?: unknown[]; country?: string; language?: string; session_id?: string };
   try {
     body = await req.json();
   } catch {
@@ -41,11 +120,17 @@ export async function POST(req: Request) {
     });
   }
 
-  const { messages, country, language } = body;
+  const { messages, country, language, session_id } = body;
 
-  // Validate messages array
+  // Validate messages array — limit total count to prevent memory abuse
   if (!Array.isArray(messages) || messages.length === 0) {
     return new Response(JSON.stringify({ error: "messages array is required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+  if (messages.length > 50) {
+    return new Response(JSON.stringify({ error: "Too many messages" }), {
       status: 400,
       headers: { "Content-Type": "application/json" },
     });
@@ -67,14 +152,31 @@ export async function POST(req: Request) {
     }
   }
 
-  const client = new Anthropic({ apiKey });
+  // Fetch user profile for personalization (non-blocking — fallback to basic context)
+  let profile: UserProfileData | null = null;
+  if (session_id && typeof session_id === "string" && session_id.length < 100) {
+    try {
+      const sb = getSupabaseServer();
+      if (sb) {
+        const { data } = await sb
+          .from("user_profiles")
+          .select("country, country_code, age, monthly_income, currency, lifetime_loss, daily_loss, monthly_loss, monthly_rent, monthly_groceries, monthly_transport, modules_completed, family_members")
+          .eq("session_id", session_id)
+          .single();
+        if (data) profile = data;
+      }
+    } catch {
+      // Non-critical — proceed without personalization
+    }
+  }
 
-  const systemWithContext = `${SYSTEM_PROMPT}\n\nUser context: Country: ${country || "unknown"}, Preferred language: ${language || "en"}`;
+  const client = new Anthropic({ apiKey });
+  const systemPrompt = buildPersonalizedPrompt(profile, country || "", language || "en");
 
   const stream = await client.messages.stream({
     model: "claude-sonnet-4-20250514",
     max_tokens: 1024,
-    system: systemWithContext,
+    system: systemPrompt,
     messages: (messages as { role: "user" | "assistant"; content: string }[]).slice(-10),
   });
 
