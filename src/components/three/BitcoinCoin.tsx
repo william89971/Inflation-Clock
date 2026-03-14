@@ -2,7 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
 interface CoinProps {
@@ -23,12 +23,22 @@ function createFaceTexture(): THREE.CanvasTexture {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 512, 512);
 
+  // Subtle inner ring
+  ctx.strokeStyle = "rgba(255,255,255,0.25)";
+  ctx.lineWidth = 8;
+  ctx.beginPath();
+  ctx.arc(256, 256, 220, 0, Math.PI * 2);
+  ctx.stroke();
+
   // ₿ symbol centered
   ctx.fillStyle = "#ffffff";
-  ctx.font = "bold 240px serif";
+  ctx.font = "bold 230px serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("₿", 256, 256);
+  // Slight shadow for depth
+  ctx.shadowColor = "rgba(0,0,0,0.4)";
+  ctx.shadowBlur = 12;
+  ctx.fillText("₿", 256, 265);
 
   return new THREE.CanvasTexture(canvas);
 }
@@ -40,8 +50,8 @@ function createGlowTexture(): THREE.CanvasTexture {
   const ctx = canvas.getContext("2d")!;
 
   const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  gradient.addColorStop(0, "rgba(255,150,0,0.6)");
-  gradient.addColorStop(0.4, "rgba(255,100,0,0.3)");
+  gradient.addColorStop(0, "rgba(255,150,0,0.7)");
+  gradient.addColorStop(0.4, "rgba(255,100,0,0.35)");
   gradient.addColorStop(1, "rgba(255,100,0,0)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 256, 256);
@@ -56,20 +66,54 @@ function Coin({ spinSpeed }: CoinProps) {
   const faceTexture = useMemo(() => createFaceTexture(), []);
   const glowTexture = useMemo(() => createGlowTexture(), []);
 
-  // Materials for cylinder: [side, top cap, bottom cap]
+  // Materials: emissive keeps color visible even without strong direct light
   const materials = useMemo(() => [
-    new THREE.MeshStandardMaterial({ color: "#f7931a", metalness: 0.95, roughness: 0.08 }),
-    new THREE.MeshStandardMaterial({ map: faceTexture, metalness: 0.9, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({ map: faceTexture, metalness: 0.9, roughness: 0.1 }),
+    // Side of coin
+    new THREE.MeshStandardMaterial({
+      color: "#f7931a",
+      metalness: 0.75,
+      roughness: 0.12,
+      emissive: new THREE.Color("#a85010"),
+      emissiveIntensity: 0.4,
+    }),
+    // Top face (₿)
+    new THREE.MeshStandardMaterial({
+      map: faceTexture,
+      metalness: 0.6,
+      roughness: 0.15,
+      emissive: new THREE.Color("#7a3a00"),
+      emissiveIntensity: 0.35,
+    }),
+    // Bottom face (₿)
+    new THREE.MeshStandardMaterial({
+      map: faceTexture,
+      metalness: 0.6,
+      roughness: 0.15,
+      emissive: new THREE.Color("#7a3a00"),
+      emissiveIntensity: 0.35,
+    }),
   ], [faceTexture]);
 
   const torusMaterial = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#ffd700", metalness: 1.0, roughness: 0.05 }),
+    () =>
+      new THREE.MeshStandardMaterial({
+        color: "#ffd700",
+        metalness: 0.85,
+        roughness: 0.08,
+        emissive: new THREE.Color("#a07800"),
+        emissiveIntensity: 0.3,
+      }),
     []
   );
 
   const glowMaterial = useMemo(
-    () => new THREE.SpriteMaterial({ map: glowTexture, blending: THREE.AdditiveBlending, transparent: true }),
+    () =>
+      new THREE.SpriteMaterial({
+        map: glowTexture,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+        opacity: 0.9,
+      }),
     [glowTexture]
   );
 
@@ -81,12 +125,11 @@ function Coin({ spinSpeed }: CoinProps) {
 
     for (let i = 0; i < 120; i++) {
       const angle = (i / 120) * Math.PI * 2;
-      const radius = 2.5;
+      const radius = 2.5 + (Math.random() - 0.5) * 0.3;
       positions[i * 3] = Math.cos(angle) * radius;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 0.4;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 0.5;
       positions[i * 3 + 2] = Math.sin(angle) * radius;
 
-      // Orange to gold gradient
       const t = i / 120;
       colors[i * 3] = 1.0;
       colors[i * 3 + 1] = 0.45 + t * 0.4;
@@ -101,10 +144,10 @@ function Coin({ spinSpeed }: CoinProps) {
   const particleMaterial = useMemo(
     () =>
       new THREE.PointsMaterial({
-        size: 0.06,
+        size: 0.07,
         vertexColors: true,
         transparent: true,
-        opacity: 0.85,
+        opacity: 0.9,
         sizeAttenuation: true,
       }),
     []
@@ -124,31 +167,34 @@ function Coin({ spinSpeed }: CoinProps) {
 
   return (
     <>
+      {/* Environment map — gives metallic surfaces something to reflect */}
+      <Environment preset="warehouse" />
+
       {/* Lights */}
-      <ambientLight intensity={0.3} />
-      <pointLight color="#ff8c00" intensity={3} position={[3, 3, 3]} />
-      <pointLight color="#ffd700" intensity={2} position={[-3, -2, 2]} />
-      <pointLight color="#ff6600" intensity={1.5} position={[0, 0, -5]} />
+      <ambientLight intensity={1.2} />
+      <pointLight color="#ff8c00" intensity={8} position={[3, 3, 3]} />
+      <pointLight color="#ffd700" intensity={5} position={[-3, -2, 2]} />
+      <pointLight color="#ff6600" intensity={4} position={[0, 0, -5]} />
+      <pointLight color="#ffaa00" intensity={3} position={[0, 4, 0]} />
 
       {/* Coin group */}
       <group ref={coinRef}>
-        {/* Main cylinder */}
         <mesh material={materials}>
           <cylinderGeometry args={[1.5, 1.5, 0.18, 64]} />
         </mesh>
 
         {/* Top torus ring */}
         <mesh material={torusMaterial} position={[0, 0.09, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[1.5, 0.04, 16, 64]} />
+          <torusGeometry args={[1.5, 0.045, 16, 64]} />
         </mesh>
 
         {/* Bottom torus ring */}
         <mesh material={torusMaterial} position={[0, -0.09, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[1.5, 0.04, 16, 64]} />
+          <torusGeometry args={[1.5, 0.045, 16, 64]} />
         </mesh>
 
         {/* Glow sprite */}
-        <sprite material={glowMaterial} scale={[6, 6, 1]} />
+        <sprite material={glowMaterial} scale={[7, 7, 1]} />
       </group>
 
       {/* Orbiting particles */}
@@ -169,7 +215,12 @@ export default function BitcoinCoin({ spinSpeed = 1.2 }: BitcoinCoinProps) {
       style={{ background: "transparent" }}
     >
       <Coin spinSpeed={spinSpeed} />
-      <OrbitControls enableDamping dampingFactor={0.05} enableZoom={false} enablePan={false} />
+      <OrbitControls
+        enableDamping
+        dampingFactor={0.05}
+        enableZoom={false}
+        enablePan={false}
+      />
     </Canvas>
   );
 }
