@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServer } from "@/lib/supabase-server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
+  const limited = rateLimit(`referral-gen:${getClientIp(req)}`, { maxRequests: 5, windowMs: 60_000 });
+  if (limited) return limited;
+
   try {
     const sb = getSupabaseServer();
     if (!sb) {

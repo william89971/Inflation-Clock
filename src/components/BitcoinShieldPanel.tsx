@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -14,8 +13,6 @@ import { CountryCode } from "@/data/inflation";
 import { calculateBitcoinScenarios } from "@/lib/bitcoinCalc";
 import { btcPriceHistory } from "@/lib/btcPriceHistory";
 import { useCountUp } from "@/hooks/useCountUp";
-
-const BitcoinCoin = dynamic(() => import("./three/BitcoinCoin"), { ssr: false });
 
 function formatUSD(value: number): string {
   if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
@@ -47,6 +44,71 @@ function TrendUpIcon() {
   );
 }
 
+const BLOCKS = [
+  { num: 850_021, hash: "0000000000000000000392a...", prev: "000000000000000000041f3...", txns: 2_841, time: "10m ago" },
+  { num: 850_022, hash: "00000000000000000001d7c...", prev: "0000000000000000000392a...", txns: 3_102, time: "8m ago"  },
+  { num: 850_023, hash: "000000000000000000028b1...", prev: "00000000000000000001d7c...", txns: 2_677, time: "6m ago"  },
+  { num: 850_024, hash: "???",                         prev: "000000000000000000028b1...", txns: null,  time: "Mining…" },
+] as const;
+
+function BlockchainViz() {
+  return (
+    <div className="overflow-x-auto snap-x snap-mandatory pb-2">
+      <div className="flex min-w-max items-center gap-2 px-1">
+        {BLOCKS.map((block, i) => {
+          const isMining = block.txns === null;
+          return (
+            <div key={block.num} className="flex items-center gap-2">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.12 }}
+                className={`snap-center w-[160px] shrink-0 rounded-xl border p-3 ${
+                  isMining ? "animate-pulse border-orange-500/40" : "border-orange-500/20"
+                }`}
+                style={{ background: "rgba(255,255,255,0.04)" }}
+              >
+                <div className="mb-2 text-xs font-bold text-orange-400">
+                  {isMining ? "⛏ Mining…" : `Block #${block.num.toLocaleString()}`}
+                </div>
+                <div className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap font-mono text-xs text-orange-400">
+                  Hash: {block.hash}
+                </div>
+                <div className="mb-1 overflow-hidden text-ellipsis whitespace-nowrap font-mono text-xs text-white/40">
+                  Prev: {block.prev}
+                </div>
+                <div className="text-xs text-white/60">
+                  {isMining ? "Txns: —" : `Txns: ${block.txns!.toLocaleString()}`}
+                </div>
+                <div className="mt-1 text-xs text-white/30">{block.time}</div>
+              </motion.div>
+              {i < BLOCKS.length - 1 && (
+                <svg
+                  width="24"
+                  height="16"
+                  viewBox="0 0 24 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="shrink-0"
+                  style={{ filter: "drop-shadow(0 0 4px rgba(247,147,26,0.6))" }}
+                >
+                  <path
+                    d="M0 8h18M14 3l6 5-6 5"
+                    stroke="#f7931a"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 interface BitcoinShieldPanelProps {
   monthlyIncome: number;
   currentAge: number;
@@ -68,7 +130,7 @@ export function BitcoinShieldPanel({
     [monthlyIncome, currentAge, country]
   );
 
-  const { scenarios, cashSavingsToday, bestScenario, spinSpeed } = calc;
+  const { scenarios, cashSavingsToday, bestScenario } = calc;
 
   // 2019 scenario for Big Comparison
   const scenario2019 = scenarios.find((s) => s.year === 2019) ?? bestScenario;
@@ -138,12 +200,10 @@ export function BitcoinShieldPanel({
           </p>
         </div>
 
-        {/* 3D Coin */}
-        <div className="mb-6 flex flex-col items-center">
-          <div className="h-[280px] w-full max-w-sm sm:h-[400px]">
-            <BitcoinCoin spinSpeed={spinSpeed} />
-          </div>
-          <div className="mt-2 text-center">
+        {/* Blockchain Visualization */}
+        <div className="mb-6">
+          <BlockchainViz />
+          <div className="mt-4 text-center">
             <div className="font-[var(--font-heading)] text-4xl font-extrabold text-orange-400 sm:text-5xl">
               {formatUSDFull(animatedValue)}
             </div>

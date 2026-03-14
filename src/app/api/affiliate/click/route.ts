@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServer } from "@/lib/supabase-server";
 import { AFFILIATE_PARTNERS } from "@/config/affiliates";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 export async function POST(req: Request) {
+  const limited = rateLimit(`affiliate:${getClientIp(req)}`, { maxRequests: 20, windowMs: 60_000 });
+  if (limited) return limited;
+
   try {
     const sb = getSupabaseServer();
     if (!sb) {
