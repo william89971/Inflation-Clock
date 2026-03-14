@@ -1,12 +1,21 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { checkAnthropicBudget, logAnthropicCall } from "@/lib/anthropic-budget";
 
 export async function POST(req: Request) {
   // Rate limit: 20 requests per minute per IP
   const ip = getClientIp(req);
   const limited = rateLimit(`insights:${ip}`, { maxRequests: 20, windowMs: 60_000 });
   if (limited) return limited;
+
+  const budget = await checkAnthropicBudget();
+  if (!budget.allowed) {
+    return NextResponse.json(
+      { error: "AI is resting for today. Check back tomorrow! 📚" },
+      { status: 503 }
+    );
+  }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -52,6 +61,8 @@ Make it personal, connecting the topic to their specific situation. Be direct an
 
   const text =
     message.content[0].type === "text" ? message.content[0].text : "";
+
+  logAnthropicCall("/api/insights"); // fire-and-forget
 
   return NextResponse.json({ insight: text });
 }

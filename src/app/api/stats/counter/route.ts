@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { getSupabaseServer } from "@/lib/supabase-server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const limited = rateLimit(`counter:${getClientIp(req)}`, { maxRequests: 30, windowMs: 60_000 });
+  if (limited) return limited;
   const sb = getSupabaseServer();
   if (!sb) {
     return NextResponse.json({

@@ -26,6 +26,8 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [messageCount, setMessageCount] = useState(0);
+  const [rateLimitedUntil, setRateLimitedUntil] = useState<number | null>(null);
+  const [rateLimitCountdown, setRateLimitCountdown] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Use personalized questions if profile exists, otherwise fall back to i18n starters
@@ -49,6 +51,20 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  useEffect(() => {
+    if (!rateLimitedUntil) return;
+    const interval = setInterval(() => {
+      const remaining = Math.ceil((rateLimitedUntil - Date.now()) / 1000);
+      if (remaining <= 0) {
+        setRateLimitedUntil(null);
+        setRateLimitCountdown(null);
+      } else {
+        setRateLimitCountdown(remaining);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [rateLimitedUntil]);
 
   async function sendMessage(text: string) {
     if (!text.trim() || isStreaming || messageCount >= 20) return;
@@ -77,6 +93,33 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
           session_id: getSessionId(),
         }),
       });
+
+      if (res.status === 429) {
+        const retryAfter = parseInt(res.headers.get("Retry-After") ?? "60");
+        setRateLimitedUntil(Date.now() + retryAfter * 1000);
+        setRateLimitCountdown(retryAfter);
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = {
+            role: "assistant",
+            content: `You've asked a lot of great questions! Take a short break and come back in ${retryAfter}s ☕`,
+          };
+          return updated;
+        });
+        return;
+      }
+
+      if (res.status === 503) {
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = {
+            role: "assistant",
+            content: "Our AI tutor is taking a rest for today. Browse the modules and check back tomorrow! 📚",
+          };
+          return updated;
+        });
+        return;
+      }
 
       if (!res.ok) throw new Error("Chat API error");
 
@@ -174,9 +217,11 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
       </div>
 
       {/* Rate limit warning */}
-      {messageCount >= 20 && (
+      {(messageCount >= 20 || rateLimitedUntil) && (
         <div className="border-t border-border px-4 py-2 text-center text-xs text-negative">
-          {t("chat.rateLimit")}
+          {rateLimitedUntil && rateLimitCountdown
+            ? `You've asked a lot of great questions! Come back in ${rateLimitCountdown}s ☕`
+            : t("chat.rateLimit")}
         </div>
       )}
 
@@ -191,12 +236,12 @@ export function ChatPanel({ isOpen, onClose, fullPage = false }: ChatPanelProps)
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={t("chat.placeholder")}
-            disabled={isStreaming || messageCount >= 20}
+            disabled={isStreaming || messageCount >= 20 || !!rateLimitedUntil}
             className="input-warm flex-1 !rounded-[12px] !py-2 text-sm disabled:opacity-50"
           />
           <button
             type="submit"
-            disabled={!input.trim() || isStreaming || messageCount >= 20}
+            disabled={!input.trim() || isStreaming || messageCount >= 20 || !!rateLimitedUntil}
             className="btn-primary !px-4 !py-2 !text-sm disabled:opacity-50"
           >
             {t("chat.send")}

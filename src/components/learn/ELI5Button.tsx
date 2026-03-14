@@ -35,6 +35,16 @@ export function ELI5Button({ sectionTitle, sectionContent }: ELI5ButtonProps) {
           language: locale,
         }),
       });
+
+      if (res.status === 429) {
+        setExplanation("Lots of curiosity today! Give it a moment and try again 💡");
+        return;
+      }
+      if (res.status === 503) {
+        setExplanation("AI is resting for today. Check back tomorrow!");
+        return;
+      }
+
       const data = await res.json();
       setExplanation(data.explanation);
     } catch {

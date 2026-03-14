@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { getSupabaseServer } from "@/lib/supabase-server";
+import { checkAnthropicBudget, logAnthropicCall } from "@/lib/anthropic-budget";
 
 const BASE_SYSTEM_PROMPT = `You are a Bitcoin and economics tutor for The Inflation Clock education platform. Your job is to explain monetary concepts and Bitcoin in the simplest possible terms.
 
@@ -102,6 +103,14 @@ export async function POST(req: Request) {
   const limited = rateLimit(`chat:${ip}`, { maxRequests: 10, windowMs: 60_000 });
   if (limited) return limited;
 
+  const budget = await checkAnthropicBudget();
+  if (!budget.allowed) {
+    return new Response(
+      JSON.stringify({ error: "Our AI tutor is taking a rest for today. Browse the modules and check back tomorrow! 📚" }),
+      { status: 503, headers: { "Content-Type": "application/json" } }
+    );
+  }
+
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return new Response(JSON.stringify({ error: "AI features are currently unavailable" }), {
@@ -194,6 +203,8 @@ export async function POST(req: Request) {
       controller.close();
     },
   });
+
+  logAnthropicCall("/api/chat"); // fire-and-forget
 
   return new Response(readable, {
     headers: {

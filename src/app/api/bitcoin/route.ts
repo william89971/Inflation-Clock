@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { BTC_PRICES_FALLBACK } from "@/lib/bitcoin";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
-export async function GET() {
+export async function GET(req: Request) {
+  const limited = rateLimit(`bitcoin:${getClientIp(req)}`, { maxRequests: 10, windowMs: 60_000 });
+  if (limited) return limited;
   try {
     // CoinGecko free API - get BTC market chart for max range
     const res = await fetch(
