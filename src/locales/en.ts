@@ -252,4 +252,23 @@ export default {
 
   // Language
   "lang.toggle": "Español",
+
+  // Bitcoin Shield Panel
+  "bitcoin.shield.title": "The Bitcoin Shield",
+  "bitcoin.shield.subtitle": "What if you'd protected 10% of your income in Bitcoin?",
+  "bitcoin.shield.subtitle.sv": "🇸🇻 El Salvador made Bitcoin legal tender in 2021. Here's what that meant for Salvadorans.",
+  "bitcoin.shield.boughtIn": "Bought in {year}",
+  "bitcoin.shield.totalInvested": "Total invested",
+  "bitcoin.shield.currentValue": "Current value",
+  "bitcoin.shield.return": "Return",
+  "bitcoin.shield.bestEntry": "Best Entry",
+  "bitcoin.shield.roi": "ROI",
+  "bitcoin.shield.cashLabel": "💸 Cash savings (inflation-adjusted)",
+  "bitcoin.shield.btcLabel": "₿ Same savings in Bitcoin",
+  "bitcoin.shield.summary": "Inflation turned {invested} into {cash}. Bitcoin would have made it {btc}.",
+  "bitcoin.shield.disclaimer": "Hypothetical past performance. Not financial advice. Educational purposes only.",
+  "bitcoin.shield.learnSv": "Learn how Bitcoin is changing El Salvador →",
+  "bitcoin.shield.coinLabel": "Your savings today if you'd bought Bitcoin in {year}",
+  "bitcoin.shield.svCard": "Bought in 2021 (Legal Tender Year)",
+  "bitcoin.shield.svNote": "The year BTC became legal tender",
 } as const;

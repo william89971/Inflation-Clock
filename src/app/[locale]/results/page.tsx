@@ -24,6 +24,7 @@ import { SmartRecommendation } from "@/components/SmartRecommendation";
 import { NewsletterCTA } from "@/components/newsletter/NewsletterCTA";
 import { LocalPriceCard } from "@/components/results/LocalPriceCard";
 import { trackEvent } from "@/lib/analytics";
+import { BitcoinShieldPanel } from "@/components/BitcoinShieldPanel";
 
 function ResultsContent() {
   const searchParams = useSearchParams();
@@ -31,6 +32,7 @@ function ResultsContent() {
   const t = useI18n();
   const locale = useCurrentLocale();
   const hasSaved = useRef(false);
+  const shieldRef = useRef<HTMLDivElement>(null);
 
   const country = (searchParams.get("country") || "US") as CountryCode;
   const age = parseInt(searchParams.get("age") || "30", 10);
@@ -72,6 +74,14 @@ function ResultsContent() {
       last_inflation_rate: getInflationRate(country, currentYear),
       last_visit: new Date().toISOString(),
     });
+
+    // Scroll to Bitcoin Shield panel after results load
+    const timer = setTimeout(() => {
+      const el = document.getElementById("bitcoin-shield");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, [country, age, income, birthYear, locale, currentYear, results]);
 
   return (
@@ -148,6 +158,13 @@ function ResultsContent() {
             dailyLoss={results.dailyLoss}
             country={country}
             age={age}
+          />
+
+          <BitcoinShieldPanel
+            monthlyIncome={income}
+            currentAge={age}
+            country={country}
+            inflationLossTotal={results.lifetimeLoss}
           />
 
           {/* Dashboard CTA */}

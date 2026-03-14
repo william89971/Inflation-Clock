@@ -252,4 +252,23 @@ export default {
 
   // Language
   "lang.toggle": "English",
+
+  // Bitcoin Shield Panel
+  "bitcoin.shield.title": "El Escudo Bitcoin",
+  "bitcoin.shield.subtitle": "¿Qué hubiera pasado si hubieras protegido el 10% de tus ingresos en Bitcoin?",
+  "bitcoin.shield.subtitle.sv": "🇸🇻 El Salvador adoptó Bitcoin como moneda de curso legal en 2021. Esto es lo que significó para los salvadoreños.",
+  "bitcoin.shield.boughtIn": "Comprado en {year}",
+  "bitcoin.shield.totalInvested": "Total invertido",
+  "bitcoin.shield.currentValue": "Valor actual",
+  "bitcoin.shield.return": "Retorno",
+  "bitcoin.shield.bestEntry": "Mejor Entrada",
+  "bitcoin.shield.roi": "ROI",
+  "bitcoin.shield.cashLabel": "💸 Ahorros en efectivo (ajustado por inflación)",
+  "bitcoin.shield.btcLabel": "₿ Los mismos ahorros en Bitcoin",
+  "bitcoin.shield.summary": "La inflación convirtió {invested} en {cash}. Bitcoin los habría convertido en {btc}.",
+  "bitcoin.shield.disclaimer": "Rendimiento histórico hipotético. No es asesoramiento financiero. Solo con fines educativos.",
+  "bitcoin.shield.learnSv": "Aprende cómo Bitcoin está cambiando El Salvador →",
+  "bitcoin.shield.coinLabel": "Tus ahorros hoy si hubieras comprado Bitcoin en {year}",
+  "bitcoin.shield.svCard": "Comprado en 2021 (Año de Moneda Legal)",
+  "bitcoin.shield.svNote": "El año en que BTC se convirtió en moneda de curso legal",
 } as const;
