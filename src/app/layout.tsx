@@ -9,36 +9,34 @@ const nunito = Nunito({
   variable: "--font-heading",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://inflationclock.com";
-
 export const metadata: Metadata = {
-  title: "The Inflation Clock — See How Inflation Affects You",
+  title: "The Inflation Clock",
   description:
-    "See exactly how much purchasing power you've lost to inflation, personalized to your age, country, and income.",
+    "See exactly how inflation has affected YOUR purchasing power. It takes 30 seconds.",
+  metadataBase: new URL("https://inflation-clock.vercel.app"),
   openGraph: {
     title: "The Inflation Clock",
     description:
-      "See exactly how inflation has affected YOUR purchasing power. It takes 30 seconds. The truth lasts forever.",
-    type: "website",
-    url: siteUrl,
+      "See exactly how inflation has affected YOUR purchasing power. It takes 30 seconds.",
+    url: "https://inflation-clock.vercel.app",
     siteName: "The Inflation Clock",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "The Inflation Clock — See How Inflation Affects You",
+        alt: "The Inflation Clock - See your personalized inflation damage",
       },
     ],
     locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "The Inflation Clock",
     description:
       "See exactly how inflation has affected YOUR purchasing power. It takes 30 seconds.",
-    images: [`${siteUrl}/og-image.png`],
+    images: ["/api/og"],
   },
   manifest: "/manifest.json",
   other: {
