@@ -33,7 +33,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self'",
-      "connect-src 'self' https://*.supabase.co https://api.coingecko.com",
+      "connect-src 'self' https://*.supabase.co https://api.coingecko.com https://api.bls.gov https://api.worldbank.org",
       "frame-ancestors 'self'",
     ].join("; "),
   },
