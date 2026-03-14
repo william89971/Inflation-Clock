@@ -2,7 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 interface CoinProps {
@@ -167,9 +167,6 @@ function Coin({ spinSpeed }: CoinProps) {
 
   return (
     <>
-      {/* Environment map — gives metallic surfaces something to reflect */}
-      <Environment preset="warehouse" />
-
       {/* Lights */}
       <ambientLight intensity={1.2} />
       <pointLight color="#ff8c00" intensity={8} position={[3, 3, 3]} />
