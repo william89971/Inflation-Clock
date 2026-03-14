@@ -21,7 +21,6 @@ import { CtaSection } from "@/components/results/CtaSection";
 import { ShareButtons } from "@/components/share/ShareButtons";
 import { ReactionBar } from "@/components/social/ReactionBar";
 import { SmartRecommendation } from "@/components/SmartRecommendation";
-import { NewsletterCTA } from "@/components/newsletter/NewsletterCTA";
 import { LocalPriceCard } from "@/components/results/LocalPriceCard";
 import { trackEvent } from "@/lib/analytics";
 import { BitcoinShieldPanel } from "@/components/BitcoinShieldPanel";
@@ -199,7 +198,6 @@ function ResultsContent() {
 
           <SmartRecommendation country={country} modulesCompleted={0} />
 
-          <NewsletterCTA source="results" />
         </div>
       </div>
     </main>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
+import type { BlockData } from "@/app/api/bitcoin/blocks/route";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   AreaChart,
@@ -44,18 +45,27 @@ function TrendUpIcon() {
   );
 }
 
-const BLOCKS = [
-  { num: 850_021, hash: "0000000000000000000392a...", prev: "000000000000000000041f3...", txns: 2_841, time: "10m ago" },
-  { num: 850_022, hash: "00000000000000000001d7c...", prev: "0000000000000000000392a...", txns: 3_102, time: "8m ago"  },
-  { num: 850_023, hash: "000000000000000000028b1...", prev: "00000000000000000001d7c...", txns: 2_677, time: "6m ago"  },
-  { num: 850_024, hash: "???",                         prev: "000000000000000000028b1...", txns: null,  time: "Mining…" },
-] as const;
+const FALLBACK_BLOCKS: BlockData[] = [
+  { num: 940_021, hash: "0000000000000000000392a...", prev: "000000000000000000041f3...", txns: 2_841, time: "10m ago" },
+  { num: 940_022, hash: "00000000000000000001d7c...", prev: "0000000000000000000392a...", txns: 3_102, time: "8m ago"  },
+  { num: 940_023, hash: "000000000000000000028b1...", prev: "00000000000000000001d7c...", txns: 2_677, time: "6m ago"  },
+  { num: 940_024, hash: "???",                        prev: "000000000000000000028b1...", txns: null,  time: "Mining…" },
+];
 
 function BlockchainViz() {
+  const [blocks, setBlocks] = useState<BlockData[]>(FALLBACK_BLOCKS);
+
+  useEffect(() => {
+    fetch("/api/bitcoin/blocks")
+      .then((r) => r.json())
+      .then((data: BlockData[]) => { if (data?.length) setBlocks(data); })
+      .catch(() => {/* keep fallback */});
+  }, []);
+
   return (
     <div className="overflow-x-auto snap-x snap-mandatory pb-2">
       <div className="flex min-w-max items-center gap-2 px-1">
-        {BLOCKS.map((block, i) => {
+        {blocks.map((block, i) => {
           const isMining = block.txns === null;
           return (
             <div key={block.num} className="flex items-center gap-2">
@@ -82,7 +92,7 @@ function BlockchainViz() {
                 </div>
                 <div className="mt-1 text-xs text-white/30">{block.time}</div>
               </motion.div>
-              {i < BLOCKS.length - 1 && (
+              {i < blocks.length - 1 && (
                 <svg
                   width="24"
                   height="16"
