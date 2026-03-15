@@ -31,7 +31,8 @@ export interface InflationResults {
 export function calculateInflation(
   birthYear: number,
   country: CountryCode,
-  monthlyIncome: number
+  monthlyIncome: number,
+  rateOverrides?: Partial<Record<number, number>>
 ): InflationResults {
   const currentYear = new Date().getFullYear();
   const yearlyBreakdown: YearlyBreakdown[] = [];
@@ -39,7 +40,7 @@ export function calculateInflation(
   let cumulativeMultiplier = 1;
 
   for (let year = birthYear; year <= currentYear; year++) {
-    const rate = getInflationRate(country, year);
+    const rate = rateOverrides?.[year] ?? getInflationRate(country, year);
     if (year > birthYear) {
       cumulativeMultiplier *= 1 + rate / 100;
     }
@@ -62,7 +63,7 @@ export function calculateInflation(
   const birthIncomeToday = monthlyIncome * cumulativeMultiplier;
 
   // Current year inflation rate for loss calculations
-  const currentRate = getInflationRate(country, currentYear);
+  const currentRate = rateOverrides?.[currentYear] ?? getInflationRate(country, currentYear);
   const yearlyLoss = annualIncome * (currentRate / 100);
   const monthlyLoss = yearlyLoss / 12;
   const dailyLoss = yearlyLoss / 365;

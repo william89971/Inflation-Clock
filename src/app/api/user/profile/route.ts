@@ -108,6 +108,11 @@ export async function POST(req: Request) {
     // Array/object fields
     family_members: (v) => Array.isArray(v) && v.length <= 10,
     modules_completed: (v) => Array.isArray(v) && v.length <= 100,
+    push_subscription: (v) =>
+      v === null ||
+      (typeof v === "object" &&
+        !Array.isArray(v) &&
+        typeof (v as Record<string, unknown>).endpoint === "string"),
   };
 
   const profileData: Record<string, unknown> = {

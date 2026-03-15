@@ -8,6 +8,9 @@ import { fetchProfile, hasProfileData, UserProfile } from "@/lib/profile";
 import { formatCurrency } from "@/lib/calculations";
 import { CountryCode } from "@/data/inflation";
 import { calculateReturnVisitData } from "@/lib/dashboard";
+import { BTC_PRICES_FALLBACK } from "@/lib/bitcoin";
+import { dollarsToSats, formatSats } from "@/lib/sats";
+import { NotificationOptIn } from "@/components/NotificationOptIn";
 import Link from "next/link";
 
 const stagger = {
@@ -52,6 +55,8 @@ export default function DashboardPage() {
   }
 
   const country = (profile.country_code || "US") as CountryCode;
+  const currentBtcPrice =
+    BTC_PRICES_FALLBACK[new Date().getFullYear()] ?? 85000;
   const visitData = calculateReturnVisitData(profile);
   const {
     lossSinceLastVisit,
@@ -172,6 +177,9 @@ export default function DashboardPage() {
                 <p className="font-[var(--font-heading)] text-2xl font-bold text-positive">
                   +{formatCurrency(profile.btc_comparison, country)}
                 </p>
+                <p className="mt-0.5 text-xs text-text-muted">
+                  ≈ {formatSats(dollarsToSats(profile.btc_comparison, currentBtcPrice))}
+                </p>
                 <p className="mt-1 text-sm text-text-secondary">
                   {locale === "es"
                     ? "Si hubieras hecho DCA en Bitcoin"
@@ -251,6 +259,11 @@ export default function DashboardPage() {
               {locale === "es" ? "Seguir Aprendiendo" : "Continue Learning"}
             </Link>
           </div>
+        </motion.div>
+
+        {/* Notification Opt-In */}
+        <motion.div variants={fadeUp}>
+          <NotificationOptIn />
         </motion.div>
 
         {/* Quick Actions Bar */}

@@ -2,7 +2,7 @@
 
 import { useSearchParams, useRouter } from "next/navigation";
 import { useI18n, useCurrentLocale } from "@/locales/client";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { calculateInflation } from "@/lib/calculations";
 import { CountryCode } from "@/data/inflation";
@@ -24,6 +24,7 @@ import { SmartRecommendation } from "@/components/SmartRecommendation";
 import { LocalPriceCard } from "@/components/results/LocalPriceCard";
 import { trackEvent } from "@/lib/analytics";
 import { BitcoinShieldPanel } from "@/components/BitcoinShieldPanel";
+import { fetchFredCpiRate, FredCpiResult } from "@/lib/fred";
 
 function ResultsContent() {
   const searchParams = useSearchParams();
@@ -40,7 +41,22 @@ function ResultsContent() {
   const currentYear = new Date().getFullYear();
   const birthYear = currentYear - age;
 
-  const results = calculateInflation(birthYear, country, income);
+  const [fredData, setFredData] = useState<FredCpiResult | null>(null);
+
+  useEffect(() => {
+    if (country !== "US") return;
+    fetchFredCpiRate().then(setFredData);
+  }, [country]);
+
+  const rateOverrides = useMemo(() => {
+    if (country !== "US" || !fredData || fredData.source !== "fred") return undefined;
+    return { [currentYear]: fredData.rate };
+  }, [country, fredData, currentYear]);
+
+  const results = useMemo(
+    () => calculateInflation(birthYear, country, income, rateOverrides),
+    [birthYear, country, income, rateOverrides]
+  );
 
   // Persist user data + track analytics (run once on mount, not during render)
   useEffect(() => {
@@ -114,6 +130,14 @@ function ResultsContent() {
             lossPerSecond={results.lossPerSecond}
             country={country}
           />
+
+          {fredData?.source === "fred" && (
+            <div className="text-center">
+              <span className="inline-block rounded-full bg-positive/10 px-3 py-1 text-xs font-medium text-positive">
+                Live CPI: {fredData.rate.toFixed(2)}% YoY (FRED • as of {fredData.asOf})
+              </span>
+            </div>
+          )}
 
           <LifetimeLossCard
             lifetimeLoss={results.lifetimeLoss}

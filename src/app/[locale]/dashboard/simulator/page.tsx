@@ -10,6 +10,7 @@ import {
 } from "@/lib/dca-calculations";
 import { fetchProfile, UserProfile } from "@/lib/profile";
 import { formatCurrency } from "@/lib/calculations";
+import { formatSats } from "@/lib/sats";
 import { CountryCode } from "@/data/inflation";
 import {
   AreaChart,
@@ -334,6 +335,9 @@ export default function SimulatorPage() {
                 </p>
                 <p className="mt-1 text-xs text-text-muted">
                   {simulation.bitcoin.total_btc.toFixed(6)} BTC
+                </p>
+                <p className="mt-0.5 text-xs text-text-muted">
+                  {formatSats(Math.round(simulation.bitcoin.total_btc * 1e8))}
                 </p>
                 <div className="mt-3 rounded-lg bg-positive-light px-3 py-2">
                   <p className="text-sm font-semibold text-positive">

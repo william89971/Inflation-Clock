@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
 import "./globals.css";
+import { ServiceWorkerRegistrar } from "@/components/ServiceWorkerRegistrar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const nunito = Nunito({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#f7931a" />
       </head>
       <body className={`${inter.variable} ${nunito.variable} font-[var(--font-body)] bg-bg-primary text-text-primary antialiased`}>
+        <ServiceWorkerRegistrar />
         {children}
       </body>
     </html>
