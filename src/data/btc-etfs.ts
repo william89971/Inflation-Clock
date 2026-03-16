@@ -1,0 +1,12 @@
+export const BTC_SPOT_ETFS = [
+  { ticker: "IBIT", issuer: "BlackRock" },
+  { ticker: "FBTC", issuer: "Fidelity" },
+  { ticker: "ARKB", issuer: "ARK/21Shares" },
+  { ticker: "BITB", issuer: "Bitwise" },
+  { ticker: "GBTC", issuer: "Grayscale" },
+  { ticker: "HODL", issuer: "VanEck" },
+  { ticker: "BRRR", issuer: "Valkyrie" },
+  { ticker: "EZBC", issuer: "Franklin" },
+  { ticker: "BTCO", issuer: "Invesco" },
+  { ticker: "BTCW", issuer: "WisdomTree" },
+] as const;

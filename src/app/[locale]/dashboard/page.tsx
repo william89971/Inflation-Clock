@@ -288,6 +288,11 @@ export default function DashboardPage() {
               label={locale === "es" ? "Historia Familiar" : "Family Story"}
             />
             <QuickAction
+              href={`/${locale}/dashboard/monitor`}
+              icon="📡"
+              label={locale === "es" ? "Monitor Bitcoin" : "Bitcoin Monitor"}
+            />
+            <QuickAction
               href={`/${locale}/learn/chat`}
               icon="🤖"
               label={locale === "es" ? "Tutor IA" : "AI Tutor"}
