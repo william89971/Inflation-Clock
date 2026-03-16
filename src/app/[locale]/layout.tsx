@@ -57,9 +57,6 @@ export default async function LocaleLayout({
               <a href={`/${locale}/learn`} className="text-sm text-text-muted transition-colors hover:text-white">
                 {locale === "es" ? "Aprender" : "Learn"}
               </a>
-              <a href={`/${locale}/learn/chat`} className="text-sm text-text-muted transition-colors hover:text-white">
-                {locale === "es" ? "Tutor IA" : "AI Tutor"}
-              </a>
             </div>
             <p className="mt-8 text-xs text-text-secondary">
               &copy; {new Date().getFullYear()} The Inflation Clock. {locale === "es" ? "Educativo, no asesor\u00eda financiera." : "Educational, not financial advice."}

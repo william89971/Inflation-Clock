@@ -16,7 +16,6 @@ import { getUserData } from "@/lib/user-context";
 import { ModuleRenderer } from "@/components/learn/ModuleRenderer";
 import { SectionNav } from "@/components/learn/SectionNav";
 import { RelatedModules } from "@/components/learn/RelatedModules";
-import { PersonalizedInsight } from "@/components/learn/PersonalizedInsight";
 
 export default function ModulePage() {
   const params = useParams();
@@ -152,16 +151,6 @@ export default function ModulePage() {
           isCompleted={completedSections.has(currentSection)}
           onMarkComplete={handleMarkComplete}
         />
-
-        {/* Personalized insight at end of module */}
-        {currentSection === totalSections - 1 && (
-          <div className="mt-12">
-            <PersonalizedInsight
-              moduleSlug={slug}
-              moduleTopic={moduleData.title}
-            />
-          </div>
-        )}
 
         {/* Related modules */}
         <RelatedModules nextModule={nextModule} prevModule={prevModule} />

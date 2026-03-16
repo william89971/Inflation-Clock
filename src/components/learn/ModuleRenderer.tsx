@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ModuleSection } from "@/content/modules";
-import { ELI5Button } from "./ELI5Button";
 
 interface ModuleRendererProps {
   section: ModuleSection;
@@ -85,12 +84,6 @@ export function ModuleRenderer({ section }: ModuleRendererProps) {
         })}
       </div>
 
-      {section.eli5Available && (
-        <ELI5Button
-          sectionTitle={section.title}
-          sectionContent={section.content}
-        />
-      )}
     </motion.article>
   );
 }

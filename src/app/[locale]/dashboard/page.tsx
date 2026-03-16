@@ -288,11 +288,6 @@ export default function DashboardPage() {
               icon="📡"
               label={locale === "es" ? "Monitor Bitcoin" : "Bitcoin Monitor"}
             />
-            <QuickAction
-              href={`/${locale}/learn/chat`}
-              icon="🤖"
-              label={locale === "es" ? "Tutor IA" : "AI Tutor"}
-            />
           </div>
         </motion.div>
       </motion.div>
