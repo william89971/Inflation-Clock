@@ -48,20 +48,20 @@ export default async function LocaleLayout({
             <p className="font-[var(--font-heading)] text-lg font-bold text-bitcoin">
               The Inflation Clock
             </p>
-            <p className="mt-2 text-sm text-[#A0A4B8]">
+            <p className="mt-2 text-sm text-text-muted">
               {locale === "es"
                 ? "El conocimiento es tu mejor inversi\u00f3n."
                 : "Knowledge is your best investment."}
             </p>
             <div className="mt-6 flex items-center justify-center gap-6">
-              <a href={`/${locale}/learn`} className="text-sm text-[#A0A4B8] transition-colors hover:text-white">
+              <a href={`/${locale}/learn`} className="text-sm text-text-muted transition-colors hover:text-white">
                 {locale === "es" ? "Aprender" : "Learn"}
               </a>
-              <a href={`/${locale}/learn/chat`} className="text-sm text-[#A0A4B8] transition-colors hover:text-white">
+              <a href={`/${locale}/learn/chat`} className="text-sm text-text-muted transition-colors hover:text-white">
                 {locale === "es" ? "Tutor IA" : "AI Tutor"}
               </a>
             </div>
-            <p className="mt-8 text-xs text-[#6B7280]">
+            <p className="mt-8 text-xs text-text-secondary">
               &copy; {new Date().getFullYear()} The Inflation Clock. {locale === "es" ? "Educativo, no asesor\u00eda financiera." : "Educational, not financial advice."}
             </p>
           </div>

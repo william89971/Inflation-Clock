@@ -66,6 +66,7 @@ export function InteractiveChart({
             <button
               key={s.key}
               onClick={() => toggleSeries(s.key)}
+              aria-label={`Toggle ${s.label} visibility`}
               className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                 visible.has(s.key)
                   ? "text-black"
@@ -85,23 +86,23 @@ export function InteractiveChart({
 
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(229, 221, 211, 0.5)" />
           <XAxis
             dataKey="year"
-            stroke="#737373"
-            tick={{ fill: "#737373", fontSize: 12 }}
+            stroke="#9CA3AF"
+            tick={{ fill: "#9CA3AF", fontSize: 12 }}
           />
           <YAxis
-            stroke="#737373"
-            tick={{ fill: "#737373", fontSize: 12 }}
+            stroke="#9CA3AF"
+            tick={{ fill: "#9CA3AF", fontSize: 12 }}
             tickFormatter={yAxisFormat}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: "#1e1e1e",
-              border: "1px solid #2a2a2a",
+              backgroundColor: "#FFFBF5",
+              border: "1px solid #E5DDD3",
               borderRadius: "8px",
-              color: "#f5f5f5",
+              color: "#2D3047",
             }}
           />
           {series.map(

@@ -7,10 +7,10 @@ import { trackEvent } from "@/lib/analytics";
 import { getSupabase } from "@/lib/supabase";
 
 const REACTIONS = [
-  { id: "angry", emoji: "\uD83D\uDE21" },
-  { id: "shocked", emoji: "\uD83D\uDE31" },
-  { id: "motivated", emoji: "\uD83D\uDCAA" },
-  { id: "scared", emoji: "\uD83D\uDE30" },
+  { id: "angry", emoji: "\uD83D\uDE21", ariaLabel: "Angry" },
+  { id: "shocked", emoji: "\uD83D\uDE31", ariaLabel: "Mind blown" },
+  { id: "motivated", emoji: "\uD83D\uDCAA", ariaLabel: "Motivated" },
+  { id: "scared", emoji: "\uD83D\uDE30", ariaLabel: "Scared" },
 ] as const;
 
 interface ReactionBarProps {
@@ -101,6 +101,7 @@ export function ReactionBar({ country }: ReactionBarProps) {
             whileTap={{ scale: 0.9 }}
             onClick={() => handleReaction(r.id)}
             disabled={submitted}
+            aria-label={r.ariaLabel}
             className={`flex flex-col items-center gap-1 rounded-[14px] px-3 py-2 transition-all ${
               selected === r.id
                 ? "bg-bg-card-hover ring-2 ring-bitcoin"
@@ -109,7 +110,7 @@ export function ReactionBar({ country }: ReactionBarProps) {
                   : "hover:bg-bg-card-hover"
             }`}
           >
-            <span className="text-2xl">{r.emoji}</span>
+            <span className="text-2xl" aria-hidden="true">{r.emoji}</span>
             <span className="text-xs text-text-muted">
               {t(`reaction.${r.id}` as Parameters<typeof t>[0])}
             </span>

@@ -37,7 +37,7 @@ export function LossCards({
           transition={{ duration: 0.5, delay: i * 0.1 }}
           className="stat-card rounded-[20px] p-6 text-center shadow-lg"
         >
-          <p className="mb-2 text-2xl">{card.icon}</p>
+          <p className="mb-2 text-2xl" aria-hidden="true">{card.icon}</p>
           <p className="text-3xl font-bold text-negative">
             -{formatCurrency(card.value, country)}
           </p>

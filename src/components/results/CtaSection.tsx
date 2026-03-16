@@ -11,13 +11,13 @@ export function CtaSection() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mx-auto w-full max-w-4xl rounded-[20px] border border-border-light bg-gradient-to-br from-[#FFFBF5] to-[#FFF0E6] p-8 text-center shadow-lg"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="mx-auto w-full max-w-4xl rounded-[20px] border border-border-light bg-gradient-to-br from-[#FFFBF5] to-[#FFF0E6] p-6 text-center shadow-lg"
     >
-      <h2 className="mb-3 font-[var(--font-heading)] text-2xl font-bold text-text-heading">
+      <h2 className="mb-3 font-[var(--font-heading)] text-xl font-bold text-text-heading">
         {locale === "es" ? "Ya est\u00e1s adelante por saber esto \uD83D\uDCAA" : "You're already ahead by knowing this \uD83D\uDCAA"}
       </h2>
       <p className="mb-6 text-text-secondary">

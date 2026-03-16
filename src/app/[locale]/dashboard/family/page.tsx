@@ -18,7 +18,7 @@ import {
 /* ── animation variants ─────────────────────────────────────────────── */
 const stagger = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const fadeUp = {

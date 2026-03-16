@@ -32,7 +32,7 @@ import { SmartRecommendation } from "@/components/SmartRecommendation";
 // ── Animation variants ──────────────────────────────────────────────
 const stagger = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const fadeUp = {

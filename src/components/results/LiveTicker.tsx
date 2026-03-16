@@ -33,10 +33,10 @@ export function LiveTicker({ lossPerSecond, country }: LiveTickerProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
-      className="mx-auto w-full max-w-2xl rounded-[20px] border border-negative/20 bg-bg-card p-8 text-center shadow-lg"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="mx-auto w-full max-w-2xl rounded-[20px] border border-negative/20 bg-bg-card p-6 text-center shadow-lg"
     >
       <p className="mb-3 text-sm font-medium uppercase tracking-widest text-negative">
         {t("ticker.label")}

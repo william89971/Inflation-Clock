@@ -17,6 +17,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={t("learn.hub.search")}
+        aria-label="Search learning modules"
         className="w-full rounded-[12px] border border-border bg-white px-4 py-3 text-primary placeholder-text-muted outline-none transition-colors focus:border-bitcoin focus:ring-2 focus:ring-bitcoin/20"
       />
     </div>

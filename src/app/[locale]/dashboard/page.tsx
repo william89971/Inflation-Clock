@@ -108,11 +108,7 @@ export default function DashboardPage() {
         {daysSinceLastVisit > 0 && (
           <motion.div
             variants={fadeUp}
-            className="overflow-hidden rounded-2xl p-6 text-white shadow-lg sm:p-8"
-            style={{
-              background:
-                "linear-gradient(135deg, #FF6B6B 0%, #F7931A 50%, #FFB347 100%)",
-            }}
+            className="gradient-loss overflow-hidden rounded-2xl p-6 text-white shadow-lg sm:p-8"
           >
             <p className="mb-1 text-sm font-medium text-white/80">
               {locale === "es" ? "Desde tu ultima visita" : "Since your last visit"}
@@ -142,7 +138,7 @@ export default function DashboardPage() {
         >
           {/* Card 1: Lifetime Loss */}
           <div className="stat-card rounded-2xl p-6 shadow-lg">
-            <div className="mb-2 text-2xl">&#x1F4B8;</div>
+            <div className="mb-2 text-2xl" aria-hidden="true">&#x1F4B8;</div>
             <p className="font-[var(--font-heading)] text-2xl font-bold text-negative">
               {formatCurrency(profile.lifetime_loss || 0, country)}
             </p>
@@ -155,7 +151,7 @@ export default function DashboardPage() {
 
           {/* Card 2: Monthly Drain */}
           <div className="stat-card rounded-2xl p-6 shadow-lg">
-            <div className="mb-2 text-2xl">&#x1F4C9;</div>
+            <div className="mb-2 text-2xl" aria-hidden="true">&#x1F4C9;</div>
             <p className="font-[var(--font-heading)] text-2xl font-bold text-negative">
               {formatCurrency(profile.monthly_loss || 0, country)}
               <span className="text-base font-normal text-text-muted">
@@ -171,7 +167,7 @@ export default function DashboardPage() {
 
           {/* Card 3: Bitcoin Alternative */}
           <div className="stat-card rounded-2xl p-6 shadow-lg">
-            <div className="mb-2 text-2xl">&#x20BF;</div>
+            <div className="mb-2 text-2xl" aria-hidden="true">&#x20BF;</div>
             {profile.btc_comparison != null ? (
               <>
                 <p className="font-[var(--font-heading)] text-2xl font-bold text-positive">
@@ -207,7 +203,7 @@ export default function DashboardPage() {
 
           {/* Card 4: Learning Progress */}
           <div className="stat-card rounded-2xl p-6 shadow-lg">
-            <div className="mb-2 text-2xl">&#x1F4DA;</div>
+            <div className="mb-2 text-2xl" aria-hidden="true">&#x1F4DA;</div>
             <p className="font-[var(--font-heading)] text-2xl font-bold text-text-heading">
               {modulesCompleted}
               <span className="text-base font-normal text-text-muted">
@@ -318,7 +314,7 @@ function QuickAction({
       href={href}
       className="card-warm flex flex-col items-center gap-2 rounded-2xl px-4 py-5 text-center transition-all hover:-translate-y-0.5"
     >
-      <span className="text-2xl">{icon}</span>
+      <span className="text-2xl" aria-hidden="true">{icon}</span>
       <span className="text-xs font-medium text-text-secondary">{label}</span>
     </Link>
   );

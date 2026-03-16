@@ -16,7 +16,6 @@ import { YearlyChart } from "@/components/results/YearlyChart";
 import { LossCards } from "@/components/results/LossCards";
 import { ComparisonCards } from "@/components/results/ComparisonCards";
 import { CountryContext } from "@/components/results/CountryContext";
-import { ShareCard } from "@/components/results/ShareCard";
 import { CtaSection } from "@/components/results/CtaSection";
 import { ShareButtons } from "@/components/share/ShareButtons";
 import { ReactionBar } from "@/components/social/ReactionBar";
@@ -32,7 +31,6 @@ function ResultsContent() {
   const t = useI18n();
   const locale = useCurrentLocale();
   const hasSaved = useRef(false);
-  const shieldRef = useRef<HTMLDivElement>(null);
 
   const country = (searchParams.get("country") || "US") as CountryCode;
   const age = parseInt(searchParams.get("age") || "30", 10);
@@ -90,14 +88,20 @@ function ResultsContent() {
       last_visit: new Date().toISOString(),
     });
 
-    // Scroll to Bitcoin Shield panel after results load
-    const timer = setTimeout(() => {
-      const el = document.getElementById("bitcoin-shield");
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 2000);
-
-    return () => clearTimeout(timer);
   }, [country, age, income, birthYear, locale, currentYear, results]);
+
+  useEffect(() => {
+    if (results.lifetimeLoss > 0) {
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0,
+      }).format(results.lifetimeLoss);
+      document.title = locale === "es"
+        ? `Perdiste ${formatted} | The Inflation Clock`
+        : `You lost ${formatted} | The Inflation Clock`;
+    }
+  }, [results.lifetimeLoss, locale]);
 
   return (
     <main className="min-h-screen bg-bg-primary pb-20 pt-24">
@@ -189,34 +193,6 @@ function ResultsContent() {
             country={country}
             inflationLossTotal={results.lifetimeLoss}
           />
-
-          {/* Dashboard CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="overflow-hidden rounded-2xl p-6 text-center text-white shadow-lg sm:p-8"
-            style={{
-              background: "linear-gradient(135deg, #F7931A 0%, #FFB347 100%)",
-            }}
-          >
-            <h3 className="mb-2 font-[var(--font-heading)] text-xl font-bold">
-              {locale === "es"
-                ? "Rastrea tu dinero, protege tu futuro"
-                : "Track your money, protect your future"}
-            </h3>
-            <p className="mb-4 text-sm text-white/80">
-              {locale === "es"
-                ? "Ve tu panel personalizado con gastos, simulador Bitcoin y m\u00e1s"
-                : "See your personalized dashboard with expenses, Bitcoin simulator, and more"}
-            </p>
-            <a
-              href={`/${locale}/dashboard`}
-              className="inline-block rounded-xl bg-white px-6 py-3 text-sm font-bold text-bitcoin transition-transform hover:scale-105"
-            >
-              {locale === "es" ? "Ver Mi Panel \u2192" : "View My Dashboard \u2192"}
-            </a>
-          </motion.div>
 
           <CtaSection />
 

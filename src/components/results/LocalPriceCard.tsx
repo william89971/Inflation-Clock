@@ -64,9 +64,9 @@ export function LocalPriceCard({ country, region, currencySymbol = "$" }: LocalP
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
+      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
       className="mt-8"
     >
       <h3 className="mb-4 font-[var(--font-heading)] text-lg font-bold text-text-heading">
@@ -80,7 +80,7 @@ export function LocalPriceCard({ country, region, currencySymbol = "$" }: LocalP
         {prices.map((item, i) => (
           <motion.div
             key={item.item}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * i }}
             className="card-warm rounded-xl p-4"

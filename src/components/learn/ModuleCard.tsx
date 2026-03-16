@@ -29,7 +29,7 @@ export function ModuleCard({ module, progress = 0, index }: ModuleCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
     >
       <Link
         href={`/${locale}/learn/${module.slug}`}

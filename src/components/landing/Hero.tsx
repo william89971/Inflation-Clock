@@ -18,18 +18,18 @@ export function Hero() {
       </div>
 
       <motion.h1
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative max-w-4xl font-[var(--font-heading)] text-4xl font-extrabold leading-tight tracking-tight text-text-heading sm:text-5xl md:text-6xl"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative max-w-4xl font-[var(--font-heading)] text-4xl font-extrabold leading-tight tracking-tight text-text-heading sm:text-5xl"
       >
         {t("hero.headline")}
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         className="relative mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary sm:text-xl"
       >
         {t("hero.subheadline")}

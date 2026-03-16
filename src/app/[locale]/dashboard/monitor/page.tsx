@@ -24,7 +24,7 @@ import Link from "next/link";
 
 const stagger = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.08 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const fadeUp = {

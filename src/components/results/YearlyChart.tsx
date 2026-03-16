@@ -58,14 +58,14 @@ export function YearlyChart({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="mx-auto w-full max-w-4xl rounded-[20px] border border-border-light bg-bg-card p-6 shadow-lg sm:p-8"
     >
       <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-        <h2 className="font-[var(--font-heading)] text-xl font-bold text-[#2D3047]">{t("chart.title")}</h2>
+        <h2 className="font-[var(--font-heading)] text-xl font-bold text-text-heading">{t("chart.title")}</h2>
         <label className="flex cursor-pointer items-center gap-3">
           <span className="text-sm text-text-secondary">
             {t("chart.btcToggle")}

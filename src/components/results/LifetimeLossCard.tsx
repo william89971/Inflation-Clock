@@ -21,11 +21,11 @@ export function LifetimeLossCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mx-auto w-full max-w-2xl rounded-[20px] border border-border-light bg-bg-card p-8 text-center shadow-lg"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="mx-auto w-full max-w-2xl rounded-[20px] border border-border-light bg-bg-card p-6 text-center shadow-lg"
     >
       <h2 className="mb-2 font-[var(--font-heading)] text-lg font-semibold text-text-secondary">
         {t("lifetime.title")}

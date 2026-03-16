@@ -12,6 +12,7 @@ export function LanguageToggle() {
       <motion.button
         whileTap={{ scale: 0.95 }}
         onClick={() => changeLocale("en")}
+        aria-label="Switch to English"
         className={`rounded-lg px-3.5 py-1.5 text-[13px] font-semibold transition-all ${
           locale === "en"
             ? "bg-white text-bitcoin shadow-sm"
@@ -23,6 +24,7 @@ export function LanguageToggle() {
       <motion.button
         whileTap={{ scale: 0.95 }}
         onClick={() => changeLocale("es")}
+        aria-label="Cambiar a Español"
         className={`rounded-lg px-3.5 py-1.5 text-[13px] font-semibold transition-all ${
           locale === "es"
             ? "bg-white text-bitcoin shadow-sm"

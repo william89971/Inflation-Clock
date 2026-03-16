@@ -115,11 +115,11 @@ export function ShareButtons({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="card-warm mx-auto w-full max-w-4xl p-8 text-center"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="card-warm mx-auto w-full max-w-4xl p-6 text-center"
     >
       <h2 className="mb-6 font-[var(--font-heading)] text-xl font-bold text-primary">{t("share.title")}</h2>
 

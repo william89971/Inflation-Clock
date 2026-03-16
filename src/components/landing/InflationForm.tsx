@@ -37,14 +37,14 @@ export function InflationForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+      transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
       className="mx-auto w-full max-w-[520px] px-4 pb-12"
     >
       <form
         onSubmit={handleSubmit}
-        className="rounded-[20px] border border-border-light bg-bg-card p-8 sm:p-10 shadow-lg"
+        className="rounded-[20px] border border-border-light bg-bg-card p-6 sm:p-8 shadow-lg"
       >
         {/* Country */}
         <div className="mb-6">

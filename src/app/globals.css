@@ -1,3 +1,26 @@
+/* ===== DESIGN TOKENS =====
+ * Type Scale (Major Third 1.25):
+ *   Display:  text-4xl sm:text-5xl  (landing hero only)
+ *   H1:      text-3xl sm:text-4xl
+ *   H2:      text-xl font-bold
+ *   H3:      text-lg font-bold
+ *   Stat:    text-2xl font-extrabold
+ *   Body:    text-base
+ *   Small:   text-sm
+ *   Micro:   text-xs
+ *
+ * Spacing Grid: 8px base
+ *   Card padding: p-6 (24px)
+ *   Section gap: gap-8 (32px)
+ *   Form field gap: mb-6 (24px)
+ *
+ * Animation Standard:
+ *   Entrance: y:24, duration:0.5, ease:[0.16, 1, 0.3, 1]
+ *   Stagger: 0.1s between siblings
+ *   Tap: scale(0.97)
+ *   Hover lift: translateY(-2px)
+ * ============================= */
+
 @import "tailwindcss";
 
 @theme {
@@ -444,4 +467,55 @@ body {
 .footer-warm {
   background: #2D3047;
   color: #F0ECE3;
+}
+
+/* ===== MOTION TOKENS ===== */
+:root {
+  --motion-duration-fast: 0.2s;
+  --motion-duration-normal: 0.4s;
+  --motion-duration-slow: 0.6s;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== GRADIENT UTILITIES ===== */
+.gradient-loss {
+  background: linear-gradient(135deg, #FF6B6B 0%, #F7931A 50%, #FFB347 100%);
+}
+.gradient-brand {
+  background: linear-gradient(135deg, #F7931A 0%, #FFB347 100%);
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: rgba(247, 147, 26, 0.2);
+  color: var(--color-text-primary);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5DDD3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #E5DDD3 transparent;
+}
+
+/* ===== FOCUS ===== */
+:focus-visible {
+  outline: 2px solid #F7931A;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
 }

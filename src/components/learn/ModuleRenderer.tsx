@@ -70,7 +70,7 @@ export function ModuleRenderer({ section }: ModuleRendererProps) {
           // Render bold markers **text** as React <strong> elements (no dangerouslySetInnerHTML)
           const parts = paragraph.split(/\*\*(.*?)\*\*/g);
           return (
-            <p key={i} className="text-lg leading-[1.8] text-text-secondary">
+            <p key={i} className="text-lg leading-relaxed text-text-secondary">
               {parts.map((part, j) =>
                 j % 2 === 1 ? (
                   <strong key={j} className="text-text-primary font-semibold">

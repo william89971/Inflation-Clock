@@ -65,13 +65,13 @@ export function SmartRecommendation({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="mx-auto w-full max-w-4xl"
     >
-      <h2 className="mb-2 text-center font-[var(--font-heading)] text-2xl font-bold text-primary">
+      <h2 className="mb-2 text-center font-[var(--font-heading)] text-xl font-bold text-primary">
         {t("recommend.title")}
       </h2>
 
@@ -79,10 +79,10 @@ export function SmartRecommendation({
         {partners.map((partner, i) => (
           <motion.div
             key={partner.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.1 }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
             className="card-warm group relative p-6"
           >
             <div className="mb-3 flex items-center gap-3">

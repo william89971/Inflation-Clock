@@ -22,13 +22,13 @@ export function ComparisonCards({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="mx-auto w-full max-w-4xl"
     >
-      <h2 className="mb-4 text-center font-[var(--font-heading)] text-xl font-bold text-[#2D3047]">
+      <h2 className="mb-4 text-center font-[var(--font-heading)] text-xl font-bold text-text-heading">
         {t("comparison.title")}
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

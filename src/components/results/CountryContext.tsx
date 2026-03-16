@@ -15,13 +15,13 @@ export function CountryContext({ country }: CountryContextProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mx-auto w-full max-w-4xl rounded-[20px] border border-border-light bg-[#FFF0E6] p-8 shadow-lg"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="mx-auto w-full max-w-4xl rounded-[20px] border border-border-light bg-[#FFF0E6] p-6 shadow-lg"
     >
-      <h2 className="mb-4 font-[var(--font-heading)] text-xl font-bold text-[#2D3047]">{t("context.title")}</h2>
+      <h2 className="mb-4 font-[var(--font-heading)] text-xl font-bold text-text-heading">{t("context.title")}</h2>
       <p className="text-lg leading-relaxed text-text-secondary">
         {t(contextKey)}
       </p>
